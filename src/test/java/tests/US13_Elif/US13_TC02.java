@@ -27,7 +27,7 @@ public class US13_TC02 {
         Actions actions=new Actions(Driver.getDriver());
         actions.moveToElement(userDashboard.headerBooking).perform();
         //Click on 'Buy Ticket' link
-        userDashboard.buyTicket.click();
+        userDashboard.LinkbuyTicket.click();
         //Verify 'buy ticket' page is visible
         String actualUrl=Driver.getDriver().getCurrentUrl();
         SoftAssert softAssert=new SoftAssert();
