@@ -51,6 +51,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='form-control'])[2]") public WebElement newPasswordBox;
     @FindBy(xpath = "(//*[@class='form-control'])[3]") public WebElement confirmPasswordBox;
     @FindBy(css = ".btn.btn--primary.btn-block.btn-lg") public WebElement saveChangesButton;
+    @FindBy(css = ".iziToast-message.slideIn") public WebElement messagePasswordChanged;
 
     //Admin usernameKutusu,passwordKutusu,loginButonu
     @FindBy(xpath = "//*[@name='username']")public WebElement usernameKutusu;
