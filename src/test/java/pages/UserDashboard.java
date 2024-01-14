@@ -119,4 +119,12 @@ public class UserDashboard {
     //Contact ınfo altindaki linkler
     @FindBy(xpath = "//*[text()=' +1 (603) 624-1800']") public WebElement phoneLinki;
     @FindBy(xpath = "//*[text()=' info@easybusticket.com']") public WebElement mailLinki;
+
+
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/booked-ticket/history']") public WebElement bookingHistoryLink;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket/new']") public WebElement createNewButonu;
+    @FindBy(xpath = "//*[@name='priority']") public WebElement priorityDropBox;
+    @FindBy(xpath = "//*[@class='booking-table']") public WebElement requestTable;
+
+
 }
