@@ -87,6 +87,8 @@ public class TC {
         //8. Sayfayi kapatin
         Driver.closeDriver();
 
+        //
+
 
     }
 }
