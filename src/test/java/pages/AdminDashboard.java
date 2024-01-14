@@ -15,7 +15,7 @@ public class AdminDashboard {
     @FindBy(className = "navbar-user__name") public WebElement adminUserLinki;
     @FindBy(className = "navbar-search__btn-open") public WebElement searchButton;
     @FindBy(id = "navbar-search__field") public WebElement searchBoxtext;
-    @FindBy(className = "las la-bell text--primary") public WebElement notificationButton;
+    @FindBy(css = ".las.la-bell.text--primary") public WebElement notificationButton;
     @FindBy(className = "view-all-message") public WebElement vieweAllNotificationLinki;
     @FindBy(className = "page-title") public WebElement notificationYazisi;
     @FindBy(xpath = "//*[@class='btn btn--primary']") public WebElement markAllAsReadButonu;
@@ -27,30 +27,30 @@ public class AdminDashboard {
     //Profil sayfası
 
     @FindBy(className = "page-title") public WebElement profileText;
-    @FindBy(className = "d-flex p-3 bg--primary") public WebElement adminProfilImage;
+    @FindBy(css = ".d-flex.p-3.bg--primary") public WebElement adminProfilImage;
     @FindBy(xpath = "(//*[@class='list-group-item d-flex justify-content-between align-items-center'])[1]") public WebElement adminProfilNameText;
     @FindBy(xpath = "(//*[@class='list-group-item d-flex justify-content-between align-items-center'])[2]") public WebElement adminProfilUsernameText;
-    @FindBy(className = "card-title mb-50 border-bottom pb-2") public WebElement profilInformationText;
-    @FindBy(className = "form-control-label font-weight-bold") public WebElement nameText;
+    @FindBy(css = ".card-title.mb-50.border-bottom.pb-2") public WebElement profilInformationText;
+    @FindBy(css = ".form-control-label.font-weight-bold") public WebElement nameText;
     @FindBy(xpath = "(//*[@class='form-control'])[1]") public WebElement nameBox;
-    @FindBy(className = "form-control-label  font-weight-bold") public WebElement mailText;
+    @FindBy(css = ".form-control-label.font-weight-bold") public WebElement mailText;
     @FindBy(xpath = "(//*[@class='form-control'])[2]") public WebElement mailBox;
     @FindBy(className = "profilePicPreview") public WebElement profilInformationImage;
     @FindBy(xpath = "//*[@for='profilePicUpload1']") public WebElement uploadImageButon;
-    @FindBy(className = "mt-2 text-facebook") public WebElement uploadImageText;
-    @FindBy(className = "btn btn--primary btn-block btn-lg") public WebElement saveButton;
+    @FindBy(className = "mt-2.text-facebook") public WebElement uploadImageText;
+    @FindBy(css = ".btn.btn--primary.btn-block.btn-lg") public WebElement saveButton;
 
     //password Settings
     @FindBy(xpath = "//*[@class='btn btn-sm btn--primary box--shadow1 text--small']") public WebElement passwordSettingButon;
     @FindBy(className = "page-title") public WebElement passwordSettingText;
-    @FindBy(className = "card-title mb-50 border-bottom pb-2") public WebElement changePasswordText;
+    @FindBy(css = ".card-title.mb-50.border-bottom.pb-2") public WebElement changePasswordText;
     @FindBy(xpath = "(//*[@class='col-lg-3 col-form-label form-control-label'])[1]") public WebElement passwordText;
     @FindBy(xpath = "(//*[@class='col-lg-3 col-form-label form-control-label'])[2]") public WebElement newPasswordText;
     @FindBy(xpath = "(//*[@class='col-lg-3 col-form-label form-control-label'])[3]") public WebElement confirmPasswordText;
     @FindBy(xpath = "(//*[@class='form-control'])[1]") public WebElement passwordBox;
     @FindBy(xpath = "(//*[@class='form-control'])[2]") public WebElement newPasswordBox;
     @FindBy(xpath = "(//*[@class='form-control'])[3]") public WebElement confirmPasswordBox;
-    @FindBy(className = "btn btn--primary btn-block btn-lg") public WebElement saveChangesButton;
+    @FindBy(css = ".btn.btn--primary.btn-block.btn-lg") public WebElement saveChangesButton;
 
     //Admin usernameKutusu,passwordKutusu,loginButonu
     @FindBy(xpath = "//*[@name='username']")public WebElement usernameKutusu;

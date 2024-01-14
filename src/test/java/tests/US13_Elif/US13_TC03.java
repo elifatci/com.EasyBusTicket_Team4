@@ -34,5 +34,6 @@ public class US13_TC03 {
         //Verify that the ticket information is visible
         //Click on the 'dowload ticket' button
         //Confirm that the ticket has been downloaded
+        //Close the browser
     }
 }
