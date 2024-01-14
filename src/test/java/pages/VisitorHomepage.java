@@ -170,4 +170,11 @@ public class VisitorHomepage {
     @FindBy(xpath = "//*[@href='https://www.youtube.com']") public WebElement youtubeIkonu;
     @FindBy(xpath = "//*[@href='https://www.instagram.com']") public WebElement instagramIkonu;
 
+
+    //SignIn Butonu ile gidilen login sayfasi
+    @FindBy(css = "#username") public WebElement textBoxUsername;
+    @FindBy(css = "#password") public WebElement textBoxPassword;
+    @FindBy(css = ".account-button.w-100") public WebElement buttonLogin;
+
+
 }
