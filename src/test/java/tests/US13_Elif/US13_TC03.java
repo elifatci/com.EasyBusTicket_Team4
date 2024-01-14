@@ -1,6 +1,10 @@
 package tests.US13_Elif;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
+import pages.UserDashboard;
+import pages.VisitorHomepage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US13_TC03 {
@@ -9,7 +13,7 @@ public class US13_TC03 {
         //Launch browser
         //Navigate to url "https://qa.easybusticket.com/"
         //Click on 'SignIn' button
-        // Enter correct email address and password
+        // Enter correct username and password
         // Click 'login' button
         //Hover over the reservation link
         //Click on the 'buy ticket' button
