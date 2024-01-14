@@ -12,6 +12,8 @@ public class VisitorHomepage {
     }
 
     //Visitor header elements
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerTop;
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerButtom;
     @FindBy (xpath = "//*[text()=\"Home\"]") public WebElement ButtonHome;
     @FindBy (xpath = "//*[text()='About']") public  WebElement ButtonAbout;
     @FindBy (xpath = "//*[text()='FAQs']") public WebElement ButtonFAQs;
