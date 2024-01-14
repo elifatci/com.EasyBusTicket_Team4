@@ -171,10 +171,23 @@ public class VisitorHomepage {
     @FindBy(xpath = "//*[@href='https://www.instagram.com']") public WebElement instagramIkonu;
 
 
-    //SignIn Butonu ile gidilen login sayfasi
+    //Headerdaki Sign-In e tıklayınca
     @FindBy(css = "#username") public WebElement textBoxUsername;
     @FindBy(css = "#password") public WebElement textBoxPassword;
     @FindBy(css = ".account-button.w-100") public WebElement buttonLogin;
+    @FindBy(xpath = "//a[text()='Forgot Password?']") public WebElement TextForgetPassword;
+
+    //Headerdaki Sign-Up e tıklayınca;
+    @FindBy(id = "firstname") public WebElement PlaceholderFirstName;
+    @FindBy(id = "lastname") public WebElement PlaceHolderLastname;
+    @FindBy(id = "country") public WebElement PlaceholderCountry;
+    @FindBy(xpath = "//input[@type='number']") public WebElement PlaceholderMobile;
+    @FindBy(id = "username") public WebElement PlaceholderSignUpUsername;
+    @FindBy(id = "email") public WebElement PlaceholderSignUpEmail;
+    @FindBy(xpath = "//input[@id='password']") public WebElement PlaceholderSignupPassword;
+    @FindBy(id = "password-confirm") public WebElement PlaceholderConfirmPassword;
+    @FindBy(id ="agree") public WebElement CheckListAgree;
+    @FindBy(xpath = "//button[@class='account-button w-100']") public WebElement ButtonSignUpSignUpPage;
 
 
 }
