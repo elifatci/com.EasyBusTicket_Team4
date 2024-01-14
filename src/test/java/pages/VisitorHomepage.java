@@ -98,7 +98,7 @@ public class VisitorHomepage {
     @FindBy(xpath = "//*[@id='other']")public WebElement ButonOthercinsiyet;
     @FindBy(xpath = "(//*[@class='seat'])[1]")public WebElement ButonA1Koltuk;
     @FindBy(xpath = "(//*[@class='seat'])[2]")public WebElement ButonA2Koltuk;
-    @FindBy(xpath = "/*[@class=\"book-bus-btn\"]")public WebElement ButonContinue;
+    @FindBy(className = "book-bus-btn")public WebElement ButonContinue;
     @FindBy(xpath = "//*[@id='btnBookConfirm']")public WebElement ButonConfirmBooking;
 
     //Offered Facilities -olanaklar(otobüs imkanları)
