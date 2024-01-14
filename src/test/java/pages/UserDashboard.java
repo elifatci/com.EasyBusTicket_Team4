@@ -23,7 +23,7 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@href='javascript::void()'])[1]") public WebElement headerBooking;
 
     // Header da Booking basliginin altinda Buy Ticket buttonu
-    @FindBy(xpath = "(//*[@href='https://easybusticket.com/tickets'])[1]") public WebElement buyTicket;
+    @FindBy(linkText = "Buy Ticket") public WebElement LinkbuyTicket;
 
     // Header da Booking basliginin altinda Booking History buttonu
     @FindBy(xpath = "//*[@href='https://easybusticket.com/user/booked-ticket/history']") public WebElement bookingHistory;
