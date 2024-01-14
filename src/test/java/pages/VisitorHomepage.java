@@ -188,6 +188,7 @@ public class VisitorHomepage {
     @FindBy(id = "password-confirm") public WebElement PlaceholderConfirmPassword;
     @FindBy(id ="agree") public WebElement CheckListAgree;
     @FindBy(xpath = "//button[@class='account-button w-100']") public WebElement ButtonSignUpSignUpPage;
+    @FindBy(xpath = "//*[@*='account-form-wrapper']") public WebElement signUpYourAccountAndRegisterForm;
 
 
 }
