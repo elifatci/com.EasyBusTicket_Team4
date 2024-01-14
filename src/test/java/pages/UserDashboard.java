@@ -17,7 +17,7 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@alt='Logo'])[1]") public  WebElement headerEasyBusLogo;
 
     // User sayfasinda header da Dashboard
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/user/dashboard']") public WebElement headerDashboard;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/dashboard']") public WebElement headerDashboard;
 
     // User sayfasinda header da Booking
     @FindBy(xpath = "(//*[@href='javascript::void()'])[1]") public WebElement headerBooking;
@@ -26,7 +26,7 @@ public class UserDashboard {
     @FindBy(linkText = "Buy Ticket") public WebElement LinkbuyTicket;
 
     // Header da Booking basliginin altinda Booking History buttonu
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/user/booked-ticket/history']") public WebElement bookingHistory;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/booked-ticket/history']") public WebElement bookingHistory;
     @FindBy(linkText = "Rejected") public WebElement statusRejected;
     @FindBy(xpath = "//*[@class='checkinfo'])[1]") public WebElement actionButtonu;
     @FindBy(xpath = "(//*[@type='button'])[2]") public WebElement actionKapatma;
@@ -35,8 +35,8 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@href='javascript::void()'])[2]") public WebElement headerSupportRequest;
 
     // Header da Support Request basliginin altinda Create New buttonu
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/ticket/new']") public WebElement createNew;
-    @FindBy(xpath = "(//*[@href='https://easybusticket.com/ticket'])[2]") public WebElement MySupportRequest;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket/new']") public WebElement createNew;
+    @FindBy(xpath = "(//*[@href='https://qa.easybusticket.com/ticket'])[2]") public WebElement MySupportRequest;
     @FindBy(xpath = "//*[@name='name']") public WebElement Name;
     @FindBy(xpath = "//*[@name='email']") public WebElement Mail;
     @FindBy(xpath = "//*[@name='subject']") public WebElement Subject;
@@ -45,16 +45,16 @@ public class UserDashboard {
     @FindBy(id = "recaptcha") public WebElement submitButtonu;
 
     // Header da Support Request da Requests buttonu
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/ticket']") public WebElement Requests;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket']") public WebElement Requests;
     @FindBy(linkText = "High") public WebElement requestsPriority;
-    @FindBy(xpath = "(//*[@href='https://easybusticket.com/ticket/view/713431'])[2]") public WebElement requestsAction;
+    @FindBy(xpath = "(//*[@href='https://qa.easybusticket.com/ticket/view/713431'])[2]") public WebElement requestsAction;
     @FindBy(id = "inputMessage") public WebElement yorumAlani;
     @FindBy(xpath = "//*[@type='file']") public WebElement actionDosyaSec;
     @FindBy(xpath = "//*[@type='submit']") public WebElement actionReply;
 
     // User sayfasin da headerın Profile alaninda profile buttonu
     @FindBy(xpath = "//*[@href='#0']") public WebElement profile;
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/user/profile-setting']") public WebElement profileProfil;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/profile-setting']") public WebElement profileProfil;
     @FindBy(xpath = "//*[@name='firstname']") public WebElement firstname;
     @FindBy(xpath = "//*[@name='lastname']") public WebElement lastName;
     @FindBy(id = "email") public WebElement email;
@@ -74,7 +74,7 @@ public class UserDashboard {
     @FindBy(xpath = "//*[@type='submit']") public WebElement changePassword;
 
     // User sayfasin da headerın Profile alanida Logout buttonu
-    @FindBy(xpath = "//*[@href='https://easybusticket.com/logout']") public WebElement Logout;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/logout']") public WebElement Logout;
 
     //Dashboard texti
     @FindBy(xpath = "(//*[text()='Dashboard'])[2]") public WebElement textDashboard;
