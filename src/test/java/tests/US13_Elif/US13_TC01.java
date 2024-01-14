@@ -21,7 +21,7 @@ public class US13_TC01 {
         String actualTitle=Driver.getDriver().getTitle();
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(actualTitle.contains("login"));
-        // Enter correct email address and password
+        // Enter correct username and password
         visitorHomepage.textBoxUsername.sendKeys("elifatci");
         visitorHomepage.textBoxPassword.sendKeys("123Elif_");
         // Click 'login' button
