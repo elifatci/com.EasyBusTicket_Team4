@@ -17,11 +17,16 @@ public class US13_TC01 {
         //Click on 'SignIn' button
         VisitorHomepage visitorHomepage=new VisitorHomepage();
         visitorHomepage.ButtonSignIn.click();
+        // Enter correct username and password (Doğru username ve şifreyi girin)
+        visitorHomepage.textBoxUsername.sendKeys("elifatci");
+        visitorHomepage.textBoxPassword.sendKeys("123Elif_");
+        // Click 'login' button (Giris yap butonuna tiklayin)
+        visitorHomepage.buttonLogin.click();
         //Verify login page is visible
         String actualTitle=Driver.getDriver().getTitle();
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(actualTitle.contains("login"));
-        // Enter correct email address and password
+        // Enter correct username and password
         visitorHomepage.textBoxUsername.sendKeys("elifatci");
         visitorHomepage.textBoxPassword.sendKeys("123Elif_");
         // Click 'login' button
