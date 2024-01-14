@@ -57,6 +57,13 @@ public void US03_TC2_AnasayfaVisitorBiletalma(){
     ReusableMethods.clickWithJS(homepage.ButonA1Koltuk);
     ReusableMethods.clickWithJS(homepage.ButonMalecinsiyet);
     ReusableMethods.clickWithJS(homepage.ButonContinue);
+    //10.Continue butonu tıklanıp confirm booking yapılır
+    ReusableMethods.waitFor(3);
+    homepage.ButonConfirmBooking.click();
+    //11.Üye olmadan bilet alınamaz o yüzden üye olma sayfasına yönlendirdiği doğrulanır.
+    softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),"https://qa.easybusticket.com/login","login sayfasına yönlendirilmedi");
+    //12.Tarayıcı kapatılır
+    Driver.quitDriver();
 
 
 
