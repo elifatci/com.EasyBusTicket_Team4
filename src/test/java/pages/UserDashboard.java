@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class UserDashboard {
 
     public UserDashboard(){
@@ -127,7 +129,19 @@ public class UserDashboard {
     @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/booked-ticket/history']") public WebElement bookingHistoryLink;
     @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket/new']") public WebElement createNewButonu;
     @FindBy(xpath = "//*[@name='priority']") public WebElement priorityDropBox;
-    @FindBy(xpath = "//*[@class='booking-table']") public WebElement requestTable;
+    @FindBy(xpath = "//*[@class='booking-table']") public List<WebElement> requestTable;
+    @FindBy(xpath = "(//*[@class='btn btn--base btn-sm'])[2]") public WebElement actionReq;
+    @FindBy(xpath = "(//p)[3]") public WebElement mesajim;
+    @FindBy(xpath = "(//*[@class='mr-3'])") public WebElement attachment;
+    @FindBy(xpath = "//*[@class='badge badge--warning py-2 px-3']") public WebElement replayedYazisi;
+    @FindBy(tagName = "h2") public WebElement profileText;
+    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/user/profile-setting']") public WebElement profileProfileLinki;
+
+
+
+
+
+
 
     // Buy Ticket otobus secme alani Pickup Point, Dropping Point, Date of Journey, Find Tickets, Select Seat
     @FindBy(xpath = "(//*[@role='presentation'])[1]") public WebElement pickupPoint;

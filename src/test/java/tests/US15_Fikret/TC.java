@@ -5,15 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.UserDashboard;
 import pages.VisitorHomepage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 
 public class TC {
+    String filePath;
 
     @Test
     public void test01() {
@@ -30,33 +34,56 @@ public class TC {
         //4. Sign In your Account sayfasinda geçerli username ve geçerli password girerek login olur
         homepage.textBoxUsername.sendKeys("fikretZ");
         homepage.textBoxPassword.sendKeys("Prs12345.");
+        //ReusableMethods.wait(2);
         ReusableMethods.clickWithJS(homepage.buttonLogin);
         //5. Dashboard sayfasinda Support Reques menusune tiklar
         UserDashboard userDashboard = new UserDashboard();
         ReusableMethods.clickWithJS(userDashboard.headerSupportRequest);
+        //ReusableMethods.wait(2);
         //6. Creat new linkine tiklar
         ReusableMethods.clickWithJS(userDashboard.createNewButonu);
         //7. Boş olarak gelen kutulara gerekli bilgileri girer
         userDashboard.Subject.sendKeys("mesajim");
+        //ReusableMethods.wait(2);
         Select dropdown = new Select(userDashboard.priorityDropBox);
-        dropdown.selectByVisibleText("Medium"); // veya başka bir seçenek belirleyebilirsiniz
+        //ReusableMethods.wait(2);
+        dropdown.selectByVisibleText("High"); // veya başka bir seçenek belirleyebilirsiniz
         userDashboard.yorumAlani.sendKeys("Mars'a araciniz yok, koyarmisiniz lutfen..");
-        //8. Bir doküman ekleyin
-        String filePath = "C:\\Users\\Z€YB\\Desktop\\denemem.docx";
+        //ReusableMethods.wait(2);
+        //8. Yerel PC' den bir doküman ekler
+        filePath = "C:\\Users\\Z€YB\\Desktop\\denemem.docx";
         userDashboard.dosyaSec.sendKeys(filePath);
+        //ReusableMethods.wait(2);
         //9. Mesajı gönderin
         ReusableMethods.clickWithJS(userDashboard.submitButtonu);
         //10. Subject, Status, Priority ve Last Reply başlıklarını ve içeriklerini görüntüleyin
-
-
-
-        //11. Action butonuna tıklayın
-        //12. Açılan sayfada mesajınızı görüntüleyin
-        //13. Attachment 1 tıklayıp, dosyanın indirildiğini doğrulayın
-        //14. Your reply placeholder içeren textBox’ a cevabınızı yazın
-        //14. Replay butonuna tıklayıp cevabınızı gönderin
-        //15.Cevabın başarılı bir şekilde gönderildiğini doğrulayın-Replied ile doğrulama yapılabilir
-        //16.Sayfayı kapatın
+        List<WebElement> baslikVeIcerikElementList = userDashboard.requestTable;
+        List<String> baslikVeIcerikList = ReusableMethods.getElementsText(baslikVeIcerikElementList);
+        System.out.println(baslikVeIcerikList);
+        SoftAssert softAssert = new SoftAssert();
+        //11. Action butonuna tıklar
+        //ReusableMethods.wait(2);
+        ReusableMethods.clickWithJS(userDashboard.actionReq);
+        //12. Açılan sayfadaki mesajın kendi measajı oldugunu dogrular
+        String actualMesaj = userDashboard.mesajim.getText();
+        String expectedMesaj = "Mars'a araciniz yok, koyarmisiniz lutfen..";
+        softAssert.assertEquals(actualMesaj, expectedMesaj, "different");
+        //13. Attachment 1 tıklayıp, dosyanın indirildiğini doğrular
+        //ReusableMethods.wait(2);
+        ReusableMethods.clickWithJS(userDashboard.attachment);
+        filePath = System.getProperty("user.home") + "\\Downloads\\mesajim.docx";
+        softAssert.assertTrue(Files.exists(Paths.get(filePath)));
+        //14. Your reply placeholder içeren textBox’ ın kullanılabilir oldugunu test eder
+        softAssert.assertTrue(userDashboard.yorumAlani.isEnabled(), "kullanilamiyor");
+        //15. Your reply placeholder içeren textBox’ a cevabını yazar
+        userDashboard.yorumAlani.sendKeys("Mars seferlerimiz yakinda..");
+        //ReusableMethods.wait(2);
+        //16. Replay butonuna tıklayıp cevabınızı gönderin
+        ReusableMethods.clickWithJS(userDashboard.actionReply);
+        //17.Cevabın başarılı bir şekilde gönderildiğini doğrulayın-Replied ile doğrulama yapılır
+        softAssert.assertTrue(userDashboard.replayedYazisi.isDisplayed(), "Replied yazisi goruntulenemedi");
+        softAssert.assertAll();
+        //18.Sayfayı kapatın
         ReusableMethods.wait(7);
         Driver.closeDriver();
     }
