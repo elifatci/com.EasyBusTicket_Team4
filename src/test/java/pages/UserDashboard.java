@@ -86,7 +86,7 @@ public class UserDashboard {
 
     //Dashboard sayfasindaki tablo
     @FindBy(css = ".badge.badge--success") public WebElement textFirstStatus;
-    @FindBy(css = ".las.la-info-circle") public WebElement buttonFirstAction;
+    @FindBy(xpath = "//tr[1]//td[10]") public WebElement buttonFirstAction;
     @FindBy(className = "modal-title") public WebElement textTicketBookingHistory;
     @FindBy(xpath= "(//*[@type='button'])[2]") public WebElement buttonClose;
 
@@ -127,11 +127,11 @@ public class UserDashboard {
     @FindBy(xpath = "//*[@class='booking-table']") public WebElement requestTable;
 
     // Buy Ticket otobus secme alani Pickup Point, Dropping Point, Date of Journey, Find Tickets, Select Seat
-    @FindBy(xpath = "//*[@role='combobox']") public WebElement pickupPoint;
+    @FindBy(xpath = "(//*[@role='presentation'])[1]") public WebElement pickupPoint;
     @FindBy(xpath = "//*[@role='textbox']") public WebElement droppingPoint;
     @FindBy(xpath = "//*[@name='date_of_journey']") public WebElement dateOfJourney;
     @FindBy(xpath = "(//*[@class='form--group'])[4]") public WebElement findTickets;
-    @FindBy(xpath = "(//*[@class='btn btn--base'])[4]") public WebElement selectSeat;
+    @FindBy(xpath = "(//*[@class='btn btn--base'])[1]") public WebElement selectSeat;
 
     // Otobus koltuk secme ve cinsiyet secme bolumu
     @FindBy(xpath = "//*[@for='male']") public WebElement male;
@@ -187,19 +187,27 @@ public class UserDashboard {
 
     // Bu koltukları ayirttıgini onayla veya onaylama
     @FindBy(xpath = "//*[@type='button']") public WebElement Close;
-    @FindBy(xpath = "//*[@type='submit']") public WebElement Confirm;
+    @FindBy(id = "btnBookConfirm") public WebElement Confirm;
 
     // Odeme islemleri
-    @FindBy(xpath = "//*[@class='card-img-top']") public WebElement stripeHosted;
-    @FindBy(xpath = "//*[@href='javascript:void(0)']]") public WebElement payNow;
+    @FindBy(xpath = "//*[@data-name='Stripe Hosted']") public WebElement stripeHosted;
+    @FindBy(css = ".btn.btn--base.btn--md.w-100.radius-5.mt-3") public WebElement payNow;
     @FindBy(xpath = "//*[@href='https://easybusticket.com/user/ticket-booking/payment/confirm']") public WebElement payNow2;
 
     // Kart giris bilgileri
     @FindBy(xpath = "(//*[@class='input-group'])[1]") public WebElement nameOnCard;
-    @FindBy(xpath = "(//*[@class='input-group'])[2]") public WebElement cardNumber;
+    @FindBy(name = "cardNumber") public WebElement cardNumber;
     @FindBy(xpath = "//*[@name='cardExpiry']") public WebElement expirationDate;
     @FindBy(xpath = "//*[@name='cardCVC']") public WebElement CVC;
     @FindBy(xpath = "//*[@type='submit']")  public WebElement payNOW;
+
+    @FindBy(xpath = "(//*[text()='Nashville'])[2]") public WebElement dropdownPickupNashville;
+    @FindBy(xpath = "(//*[text()='Houston'])[3]") public WebElement dropdownDroppingHouston;
+    @FindBy(className = "seat-overview-wrapper") public WebElement dogrulamaGidisVaris;
+    @FindBy(id = "UGF5bWVudCUyMGNhcHR1cmVkJTIwc3VjY2Vzc2Z1bGx5LmdyZWVu") public WebElement messagePaymentSuccesfully;
+    @FindBy(css = ".btn.btn--success.confirm-btn.btn--sm") public WebElement buttonConfirmPaymentStripe;
+    @FindBy(xpath = "//button[@type='button']") public WebElement buttonDownloadTicket;
+
 
 
 }
