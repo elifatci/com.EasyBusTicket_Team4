@@ -20,7 +20,7 @@ public class US06_TC01 {
         softAssert.assertEquals(actualTitle,expectedTitle,"homepage is not visible");
         //Click on 'FAQs' link
         VisitorHomepage visitorHomepage=new VisitorHomepage();
-        visitorHomepage.ButtonFAQs.click();
+        visitorHomepage.buttonFAQs.click();
         //Verify that FAQs page is visible successfully
         expectedTitle=" Easy Bus Ticket - FAQs";
         softAssert.assertTrue(Driver.getDriver().getTitle().equals(expectedTitle));

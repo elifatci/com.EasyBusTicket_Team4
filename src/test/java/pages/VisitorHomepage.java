@@ -153,7 +153,7 @@ public class VisitorHomepage {
     @FindBy(xpath = "(//a)[30]")public WebElement ticketPoliciesFooter;
     @FindBy(xpath = "(//a)[31]")public WebElement phoneNumberFooter;
     @FindBy(xpath = "(//a)[32]")public WebElement infoEmailFooter;
-    @FindBy(xpath = "/html/body/section[6]/div/div/div/div[4]/div/ul/li[1]/text()[2]")public WebElement locacionFooter;
+    @FindBy(xpath = "/html/body/section[6]/div/div/div/div[4]/div/ul/li[1]/text()[2]")public WebElement locationFooter;
 
     // Footer'dan Yönlendirilen Sayfalar
     @FindBy(xpath = "//h2[text()=\"About\"]")public WebElement aboutPage;
@@ -191,6 +191,14 @@ public class VisitorHomepage {
     @FindBy(id ="agree") public WebElement CheckListAgree;
     @FindBy(xpath = "//button[@class='account-button w-100']") public WebElement ButtonSignUpSignUpPage;
     @FindBy(xpath = "//*[@*='account-form-wrapper']") public WebElement SignUpYourAccountAndRegisterForm;
+
+    @FindBy(xpath = "//*[text()='Support Tickets']") public WebElement textSupportTickets;
+    @FindBy(xpath = "//*[text()='Subject']") public WebElement textSubject;
+    @FindBy(xpath = "//*[text()='Status']") public WebElement textStatus;
+    @FindBy(xpath = "//*[text()='Priority']") public WebElement textPriority;
+    @FindBy(xpath = "//*[text()='Last Reply']") public WebElement textLastReply;
+
+
 
 
 }
