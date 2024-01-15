@@ -68,6 +68,7 @@ public class VisitorHomepage {
     @FindBy(id = "subject") public WebElement PlaceholderSubject;
     @FindBy(id = "msg") public WebElement PlaceholderMessage;
     @FindBy(className = "contact-button") public WebElement ButtonSendUsMessage;
+    @FindBy (xpath = "//div[@class=\"map-wrapper\"]") public WebElement mapGoogle;
 
     //Contact Sayfasındaki maps bö
     @FindBy(xpath = "//button[@aria-label='Zoom in']") public WebElement IconZoomIn;
@@ -134,10 +135,10 @@ public class VisitorHomepage {
 
     // All footer
     @FindBy(className ="footer-top")public WebElement footer;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[5]")public WebElement twitterFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[6]")public WebElement facebookFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[7]")public WebElement youtubeFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[8]")public WebElement instagramFooter;
+    @FindBy(xpath = "//*[@href='https://www.twitter.com']")public WebElement twitterFooter;
+    @FindBy(xpath = "//*[@href='https://www.facebook.com']")public WebElement facebookFooter;
+    @FindBy(xpath = "//*[@href='https://www.youtube.com']")public WebElement youtubeFooter;
+    @FindBy(xpath = "//*[@href='https://www.instagram.com']")public WebElement instagramFooter;
     @FindBy(xpath = "(//img[@alt=\"Logo\"])[2]")public WebElement easyBusTicketImageFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[1]")public WebElement usefulLinksFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[2]")public WebElement policiesFooter;
