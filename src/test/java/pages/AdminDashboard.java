@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AdminDashboard {
 
     public AdminDashboard(){
@@ -654,5 +656,10 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='card-body'])[3]") public  WebElement loginByBrowser;
     @FindBy(xpath = "(//*[@class='card-body'])[4]") public  WebElement loginByOS;
     @FindBy(xpath = "(//*[@class='card-body'])[5]") public  WebElement loginByCountry;
+
+    @FindBy(css = ".row") public List<WebElement> allUsersTable;
+    @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
+    @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
+
 
 }
