@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class UserDashboard {
 
     public UserDashboard(){
@@ -207,7 +209,8 @@ public class UserDashboard {
     @FindBy(id = "UGF5bWVudCUyMGNhcHR1cmVkJTIwc3VjY2Vzc2Z1bGx5LmdyZWVu") public WebElement messagePaymentSuccesfully;
     @FindBy(css = ".btn.btn--success.confirm-btn.btn--sm") public WebElement buttonConfirmPaymentStripe;
     @FindBy(xpath = "//button[@type='button']") public WebElement buttonDownloadTicket;
-
+    //koltuklarin listesi
+    @FindBy(className = "seat-wrapper") public List<WebElement> tableSeat;
 
 
 }
