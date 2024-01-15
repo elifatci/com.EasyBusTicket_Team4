@@ -12,15 +12,15 @@ public class VisitorHomepage {
     }
 
     //Visitor header elements
-    @FindBy(xpath = "//*[@class='header-top']") public WebElement HeaderTop;
-    @FindBy(xpath = "//*[@class='header-top']") public WebElement HeaderButtom;
-    @FindBy (xpath = "//*[text()=\"Home\"]") public WebElement ButtonHome;
-    @FindBy (xpath = "//*[text()='About']") public  WebElement ButtonAbout;
-    @FindBy (xpath = "//*[text()='FAQs']") public WebElement ButtonFAQs;
-    @FindBy (xpath = "//*[text()='Blog']") public WebElement ButtonBlog;
-    @FindBy (xpath = "//*[text()='Contact']") public WebElement ButtonContact;
-    @FindBy (xpath = "//*[text()='Buy Tickets']") public WebElement ButtonBuyTickets;
-    @FindBy(xpath = "//img[@alt='Logo']") public WebElement LogoEasyBuyTickets;
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerTop;
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerButtom;
+    @FindBy (xpath = "//*[text()=\"Home\"]") public WebElement buttonHome;
+    @FindBy (xpath = "//*[text()='About']") public  WebElement buttonAbout;
+    @FindBy (xpath = "//*[text()='FAQs']") public WebElement buttonFAQs;
+    @FindBy (xpath = "//*[text()='Blog']") public WebElement buttonBlog;
+    @FindBy (xpath = "//*[text()='Contact']") public WebElement buttonContact;
+    @FindBy (xpath = "//*[text()='Buy Tickets']") public WebElement buttonBuyTickets;
+    @FindBy(xpath = "//img[@alt='Logo']") public WebElement logoEasyBuyTickets;
     @FindBy(xpath = "//a[@class='sign-in']") public WebElement ButtonSignIn;
     @FindBy(xpath = "//a[@class='sign-up']") public WebElement ButtonSignUp;
     @FindBy(xpath = "//h2[text()='Blog Details']") public WebElement TextBlogDetails;
@@ -190,6 +190,7 @@ public class VisitorHomepage {
     @FindBy(id = "password-confirm") public WebElement PlaceholderConfirmPassword;
     @FindBy(id ="agree") public WebElement CheckListAgree;
     @FindBy(xpath = "//button[@class='account-button w-100']") public WebElement ButtonSignUpSignUpPage;
+    @FindBy(xpath = "//*[@*='account-form-wrapper']") public WebElement SignUpYourAccountAndRegisterForm;
 
 
 }
