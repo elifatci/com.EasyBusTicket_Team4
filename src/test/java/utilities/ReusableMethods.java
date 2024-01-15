@@ -388,5 +388,16 @@ public class ReusableMethods {
     public static void waitAndClickLocationText(WebElement element, String value) {
         Driver.getDriver().findElement(By.xpath("//*[text()='" + value + "']")).click();
     }
+
+    public static WebElement chooseSeat(List<WebElement> koltukWebElementList) {
+        if (koltukWebElementList != null && !koltukWebElementList.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(koltukWebElementList.size());
+            return koltukWebElementList.get(randomIndex);
+        } else {
+            throw new IllegalArgumentException("Koltuk WebElement listesi boş veya null.");
+        }
+    }
+
 }
 
