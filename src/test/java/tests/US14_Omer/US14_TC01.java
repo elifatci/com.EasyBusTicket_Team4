@@ -37,13 +37,16 @@ public class US14_TC01 {
         softAssert.assertTrue(userDashboard.windowTotalBookedTicket.isDisplayed(),"windowTotalBookedTicket göntülenemedi");
         softAssert.assertTrue(userDashboard.windowTotalPendingTicket.isDisplayed(),"windowTotalPendingTicket göntülenemedi");
         softAssert.assertTrue(userDashboard.windowTotalRejectedTicket.isDisplayed(),"TotalRejectedTicket göntülenemedi");
-        //8-Alınan b,letler listesinde action butonu tıklanır
+        //8-Alınan biletler listesinde action butonu tıklanır
         ReusableMethods.clickWithJS(userDashboard.buttonFirstAction);
-
-
-
-
-
+        //9.bilet yazıdrma sayfası çıktığı TicketBookingHistory yazısı ile doğrulanır.
+        softAssert.assertTrue(userDashboard.textTicketBookingHistory.isDisplayed());
+        //10.bilet yazdırma sayfası kapatılır.
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickWithJS(userDashboard.buttonClose);
+        ReusableMethods.waitFor(3);
+        //11.browser closes
+        Driver.closeDriver();
 
     }
 
