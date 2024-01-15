@@ -35,19 +35,22 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@href='javascript::void()'])[2]") public WebElement headerSupportRequest;
 
     // Header da Support Request basliginin altinda Create New buttonu
-    @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket/new']") public WebElement createNew;
+    @FindBy(xpath = "//*[@class='btn btn--base btn-sm']") public WebElement buttonNewTicket;
     @FindBy(xpath = "(//*[@href='https://qa.easybusticket.com/ticket'])[2]") public WebElement MySupportRequest;
     @FindBy(xpath = "//*[@name='name']") public WebElement Name;
     @FindBy(xpath = "//*[@name='email']") public WebElement Mail;
     @FindBy(xpath = "//*[@name='subject']") public WebElement Subject;
     @FindBy(xpath = "//*[@name='priority']") public WebElement Priority;
+    @FindBy(xpath = "(//*[@class='form--control'])[5]") public WebElement messageSection;
     @FindBy(id = "inputAttachments") public WebElement dosyaSec;
-    @FindBy(id = "recaptcha") public WebElement submitButtonu;
+    @FindBy(xpath = "//*[@class='btn btn--base h-40']") public WebElement submitButtonu;
+    @FindBy(xpath = "(//*[@class='fa fa-desktop'])[1]") public WebElement buttonAction;
 
     // Header da Support Request da Requests buttonu
     @FindBy(xpath = "//*[@href='https://qa.easybusticket.com/ticket']") public WebElement Requests;
     @FindBy(linkText = "High") public WebElement requestsPriority;
     @FindBy(xpath = "(//*[@href='https://qa.easybusticket.com/ticket/view/713431'])[2]") public WebElement requestsAction;
+    @FindBy(xpath = "//*[@class='col-md-9 ps-2']") public WebElement senderInformation;
     @FindBy(id = "inputMessage") public WebElement yorumAlani;
     @FindBy(xpath = "//*[@type='file']") public WebElement actionDosyaSec;
     @FindBy(xpath = "//*[@type='submit']") public WebElement actionReply;

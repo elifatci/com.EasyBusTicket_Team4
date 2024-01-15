@@ -1,7 +1,9 @@
 package tests.US16_Berivan;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UserDashboard;
@@ -10,7 +12,9 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US16_TC03 {
+import java.time.Duration;
+
+public class US16_TC04 {
     @Test
     public void test01(){
         //1.Launch Browser
@@ -31,14 +35,21 @@ public class US16_TC03 {
         userDashboard.headerSupportRequest.click();
         userDashboard.Requests.click();
 
-        //6.Click on the Action button on one of the displayed requests.
-        userDashboard.buttonAction.click();
-
-        //7.Verify that the sender's information of the request is displayed.
-        ReusableMethods.clickWithJS(userDashboard.yorumAlani);
+        //6- Confirm that there is a "New Ticket" button on the opened page
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(userDashboard.senderInformation.isDisplayed(),"Sender's information is not displayed");
+        softAssert.assertTrue(userDashboard.buttonNewTicket.isDisplayed(),"New ticket button is not displayed");
+
+        //7- Click on the "New Ticket" button.
+        userDashboard.buttonNewTicket.click();
+
+        //8- Fill in the necessary fields and click on the "Submit" button
+        ReusableMethods.clickWithJS(userDashboard.Name);
+        userDashboard.Subject.sendKeys("Ticket");
+        userDashboard.messageSection.sendKeys("I have a message");
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickWithJS(userDashboard.submitButtonu);
+
+
 
     }
-
 }
