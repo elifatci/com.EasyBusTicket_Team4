@@ -4,6 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +36,6 @@ public class ReusableMethods {
 
         return target;
     }
-
 
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {

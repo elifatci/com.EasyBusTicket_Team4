@@ -1,17 +1,22 @@
 package tests.US16_Berivan;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UserDashboard;
 import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class US16_TC01 {
+import java.time.Duration;
+
+public class US16_TC04 {
     @Test
-    public void test01()  {
+    public void test01(){
         //1.Launch Browser
         //2.Navigate to url "https://www.qa.easybusticket.com/"homepage.
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
@@ -30,20 +35,19 @@ public class US16_TC01 {
         userDashboard.headerSupportRequest.click();
         userDashboard.Requests.click();
 
-        //6.Confirm that you are on the Support Tickets page.
+        //6- Confirm that there is a "New Ticket" button on the opened page
         SoftAssert softAssert = new SoftAssert();
-        String expectedPageText = "Support Tickets";
-        String actualPageText = visitorHomepage.textSupportTickets.getText();
-        softAssert.assertEquals(actualPageText,expectedPageText,"İstenilen sayfada degilsiniz");
-        softAssert.assertAll();
+        softAssert.assertTrue(userDashboard.buttonNewTicket.isDisplayed(),"New ticket button is not displayed");
 
+        //7- Click on the "New Ticket" button.
+        userDashboard.buttonNewTicket.click();
 
-
-
-
-
-
-
+        //8- Fill in the necessary fields and click on the "Submit" button
+        ReusableMethods.clickWithJS(userDashboard.Name);
+        userDashboard.Subject.sendKeys("Ticket");
+        userDashboard.messageSection.sendKeys("I have a message");
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickWithJS(userDashboard.submitButtonu);
 
 
 
