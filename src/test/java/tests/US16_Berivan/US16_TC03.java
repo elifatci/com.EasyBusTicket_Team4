@@ -1,17 +1,18 @@
 package tests.US16_Berivan;
 
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UserDashboard;
 import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-public class US16_TC01 {
+public class US16_TC03 {
     @Test
-    public void test01()  {
+    public void test01(){
         //1.Launch Browser
         //2.Navigate to url "https://www.qa.easybusticket.com/"homepage.
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
@@ -30,22 +31,14 @@ public class US16_TC01 {
         userDashboard.headerSupportRequest.click();
         userDashboard.Requests.click();
 
-        //6.Confirm that you are on the Support Tickets page.
+        //6.Click on the Action button on one of the displayed requests.
+        userDashboard.buttonAction.click();
+
+        //7.Verify that the sender's information of the request is displayed.
+        ReusableMethods.clickWithJS(userDashboard.yorumAlani);
         SoftAssert softAssert = new SoftAssert();
-        String expectedPageText = "Support Tickets";
-        String actualPageText = visitorHomepage.textSupportTickets.getText();
-        softAssert.assertEquals(actualPageText,expectedPageText,"İstenilen sayfada degilsiniz");
-        softAssert.assertAll();
-
-
-
-
-
-
-
-
-
-
+        softAssert.assertTrue(userDashboard.senderInformation.isDisplayed(),"Sender's information is not displayed");
 
     }
+
 }
