@@ -39,12 +39,12 @@ public class TC {
         String actualAboutPageText = homepage.aboutPage.getText();
         softAssert.assertEquals(actualAboutPageText, expectedAboutPageText, "different");
 
-        ReusableMethods.clickWithJS(homepage.ButtonFAQs);
+        ReusableMethods.clickWithJS(homepage.buttonFAQs);
         String expectedFAQsText = "FAQs";
         String actualFAQsText = homepage.faqsPage.getText();
         softAssert.assertEquals(actualFAQsText, expectedFAQsText, "different");
 
-        ReusableMethods.clickWithJS(homepage.ButtonBlog);
+        ReusableMethods.clickWithJS(homepage.buttonBlog);
         String expectedBlogText = "Blog";
         String actualBlogText = homepage.blogPage.getText();
         softAssert.assertEquals(actualBlogText, expectedBlogText, "different");
@@ -68,24 +68,25 @@ public class TC {
         // Dogrulamalar Url' lerden yapildi
         ReusableMethods.clickWithJS(homepage.twitterIkonu);
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://twitter.com/");
-        ReusableMethods.wait(5);
+        ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
         ReusableMethods.clickWithJS(homepage.facebookIkonu);
-        ReusableMethods.wait(5);
+        ReusableMethods.wait(2);
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.facebook.com/");
         Driver.getDriver().navigate().back();
         ReusableMethods.clickWithJS(homepage.youtubeIkonu);
-        ReusableMethods.wait(5);
+        ReusableMethods.wait(2);
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.youtube.com/");
         Driver.getDriver().navigate().back();
         ReusableMethods.clickWithJS(homepage.instagramIkonu);
-        ReusableMethods.wait(5);
+        ReusableMethods.wait(2);
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://www.instagram.com/");
         Driver.getDriver().navigate().back();
-
         softAssert.assertAll();
         //8. Sayfayi kapatin
         Driver.closeDriver();
+
+        //
 
 
     }
