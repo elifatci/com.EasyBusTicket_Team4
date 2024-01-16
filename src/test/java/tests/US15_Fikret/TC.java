@@ -24,6 +24,7 @@ public class TC {
         //1.“ https://qa.easybusticket.com/” adresine gider
         Driver.getDriver().get("https://qa.easybusticket.com/");
         VisitorHomepage homepage = new VisitorHomepage();
+        SoftAssert softAssert = new SoftAssert();
         //2. Cookies kabul eder
         //Cookies varsa click yapar, yoksa kod calismaya devam eder
         if (homepage.ButonCookieAccept.isDisplayed() && homepage.ButonCookieAccept.isEnabled()) {
@@ -45,22 +46,25 @@ public class TC {
         //7. Boş olarak gelen kutulara gerekli bilgileri girer
         userDashboard.Subject.sendKeys("mesajim");
         //ReusableMethods.wait(2);
-        Select dropdown = new Select(userDashboard.priorityDropBox);
+        Select select = new Select(userDashboard.priorityDropBox);
         //ReusableMethods.wait(2);
-        dropdown.selectByVisibleText("High"); // veya başka bir seçenek belirleyebilirsiniz
+        select.selectByVisibleText("High"); // veya başka bir seçenek belirleyebilirsiniz
+        // "High" secili oldugunu dogrular
+        String actualOption = select.getFirstSelectedOption().getText();
+        String expectedOption = "High";
+        softAssert.assertEquals(actualOption,expectedOption,"High secili degil");
         userDashboard.yorumAlani.sendKeys("Mars'a araciniz yok, koyarmisiniz lutfen..");
         //ReusableMethods.wait(2);
         //8. Yerel PC' den bir doküman ekler
         filePath = "C:\\Users\\Z€YB\\Desktop\\denemem.docx";
         userDashboard.dosyaSec.sendKeys(filePath);
         //ReusableMethods.wait(2);
-        //9. Mesajı gönderin
+        //9. Mesajı gönderir
         ReusableMethods.clickWithJS(userDashboard.submitButtonu);
-        //10. Subject, Status, Priority ve Last Reply başlıklarını ve içeriklerini görüntüleyin
+        //10. Subject, Status, Priority ve Last Reply başlıklarını ve içeriklerini görüntüler
         List<WebElement> baslikVeIcerikElementList = userDashboard.requestTable;
         List<String> baslikVeIcerikList = ReusableMethods.getElementsText(baslikVeIcerikElementList);
         System.out.println(baslikVeIcerikList);
-        SoftAssert softAssert = new SoftAssert();
         //11. Action butonuna tıklar
         //ReusableMethods.wait(2);
         ReusableMethods.clickWithJS(userDashboard.actionReq);
@@ -78,13 +82,18 @@ public class TC {
         //15. Your reply placeholder içeren textBox’ a cevabını yazar
         userDashboard.yorumAlani.sendKeys("Mars seferlerimiz yakinda..");
         //ReusableMethods.wait(2);
-        //16. Replay butonuna tıklayıp cevabınızı gönderin
+        //16. Replay butonuna tıklayarak cevabını gönderir
         ReusableMethods.clickWithJS(userDashboard.actionReply);
-        //17.Cevabın başarılı bir şekilde gönderildiğini doğrulayın-Replied ile doğrulama yapılır
+        //17.Cevabın başarılı bir şekilde gönderildiğini doğrular
+            //Replied yazisi ile doğrulama yapılır
         softAssert.assertTrue(userDashboard.replayedYazisi.isDisplayed(), "Replied yazisi goruntulenemedi");
+        //18.Profile tıklar
+        ReusableMethods.clickWithJS(userDashboard.profile);
+        //19.Logout' a tıklar ve çıkış yapar
+        ReusableMethods.clickWithJS(userDashboard.profileProfileLinki);
         softAssert.assertAll();
-        //18.Sayfayı kapatın
-        ReusableMethods.wait(7);
+        //20.Sayfayı kapatır
+
         Driver.closeDriver();
     }
 }
