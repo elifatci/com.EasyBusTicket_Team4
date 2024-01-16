@@ -37,8 +37,8 @@ public class US09_TC01 {
         //12.ConfirmPassword  butonuna tıklar ve geçerli bir password girer.
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
-        //String password=faker.internet()
-         //                   .password(7,9,true,true,true);
+        String password=faker.internet()
+               .password(7,9,true,true,true);
         String username= faker.name().lastName()+"of123";
         ReusableMethods.wait(2);
 

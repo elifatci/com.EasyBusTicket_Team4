@@ -36,16 +36,7 @@ public class US16_TC01 {
         String actualPageText = visitorHomepage.textSupportTickets.getText();
         softAssert.assertEquals(actualPageText,expectedPageText,"İstenilen sayfada degilsiniz");
         softAssert.assertAll();
-
-
-
-
-
-
-
-
-
-
+        Driver.closeDriver();
 
     }
 }
