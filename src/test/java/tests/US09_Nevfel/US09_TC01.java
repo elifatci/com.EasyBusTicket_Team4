@@ -26,7 +26,7 @@ public class US09_TC01 {
         visitorHomepage.ButtonSignUp.click();
         //5. Sign up sayfaya eriştiğini  SignUp Your Account yazısı ve kayıt formu penceresi ile doğrular.
         SoftAssert softAssert=new SoftAssert();
-        softAssert.assertTrue(visitorHomepage.signUpYourAccountAndRegisterForm
+        softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
                 .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         //6.First Name text box'ına  tıklar ve geçerli bir isim girer.
         //7.Last Name text box'ına tıklar ve geçerli bir soyisim girer.
@@ -37,8 +37,8 @@ public class US09_TC01 {
         //12.ConfirmPassword  butonuna tıklar ve geçerli bir password girer.
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
-        //String password=faker.internet()
-         //                   .password(7,9,true,true,true);
+        String password=faker.internet()
+               .password(7,9,true,true,true);
         String username= faker.name().lastName()+"of123";
         ReusableMethods.wait(2);
 

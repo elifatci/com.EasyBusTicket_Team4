@@ -224,6 +224,7 @@ public class UserDashboard {
     @FindBy(id = "UGF5bWVudCUyMGNhcHR1cmVkJTIwc3VjY2Vzc2Z1bGx5LmdyZWVu") public WebElement messagePaymentSuccesfully;
     @FindBy(css = ".btn.btn--success.confirm-btn.btn--sm") public WebElement buttonConfirmPaymentStripe;
     @FindBy(xpath = "//button[@type='button']") public WebElement buttonDownloadTicket;
+    @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
 
 
 
