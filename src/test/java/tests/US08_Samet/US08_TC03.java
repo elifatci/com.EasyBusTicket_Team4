@@ -59,8 +59,8 @@ public class US08_TC03 {
             String actualMessageText= pageUser.messageText.getText();
             softAssert.assertTrue(actualMessageText.contains("This is my message"));
 
-            softAssert.assertAll();
-            Driver.getDriver().close();
+           softAssert.assertAll();
+          // Driver.getDriver().close();
 
     }
 }}
