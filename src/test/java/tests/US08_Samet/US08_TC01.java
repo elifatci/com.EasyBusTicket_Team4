@@ -18,9 +18,9 @@ public class US08_TC01 {
             homepage.ButonCookieAccept.click();
             // Verify the visibility of the 'Contact' link in the 'Header' section on the homepage.
             SoftAssert softAssert = new SoftAssert();
-            softAssert.assertTrue(homepage.ButtonContact.isDisplayed());
+            softAssert.assertTrue(homepage.buttonContact.isDisplayed());
             // Click the  'Contact' link in the 'Header' section on the homepage.
-            homepage.ButtonContact.click();
+            homepage.buttonContact.click();
             // Verify that the URL address of the opened page is 'https://qa.easybusticket.com/contact'
             softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.easybusticket.com/contact");
             ;
