@@ -666,4 +666,12 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
+    //Trip Page day box
+    @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
+
+
+
+
+
+
 }

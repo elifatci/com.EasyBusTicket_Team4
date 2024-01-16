@@ -29,15 +29,25 @@ public class TC03 {
         // 5. All Schedules yazisi olan tüm seferlerin oldugu listeye gelindigi dogrulanir ve geri donulur.
         Assert.assertTrue(page.textAllSchedules.isDisplayed());
 
-        // 6. All Schedules sayfasinda ilk sefer bilgisi yanındaki AktiveSchedule ikonu tiklanir
 
+        // 6. Active Schedule action formu geldigi dogrulanir
+        Assert.assertTrue(page.buttonScheduleAddNew.isDisplayed());
 
-        // 7. Active Schedule action formu geldigi dogrulanir
+        ReusableMethods.clickWithJS(page.buttonScheduleAddNew);
+
+        // 7. Active Schedule da Start From ve End At saat giriniz
+
+        page.textBoxStartFromAdd.sendKeys("13:30");
+        page.textBoxEndAtAdd.sendKeys("18:40");
+        ReusableMethods.clickWithJS(page.buttonUpdate);
+
 
         // 8. Active Schedule butonu tiklanir
+        ReusableMethods.clickWithJS(page.textUpdateSchedule);
 
-        // 12. Close  butonu tiklanir
+        // 9. Close  butonu tiklanir
+        ReusableMethods.clickWithJS(page.buttonCloseUpdateSchedule);
 
-        // 13. Degisiklik yapilmadan action kapandigi dogrulanir
+        Driver.closeDriver();
     }
 }
