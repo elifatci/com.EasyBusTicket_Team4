@@ -657,9 +657,10 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='card-body'])[4]") public  WebElement loginByOS;
     @FindBy(xpath = "(//*[@class='card-body'])[5]") public  WebElement loginByCountry;
 
-    @FindBy(css = ".row") public List<WebElement> allUsersTable;
+    @FindBy(css = ".row") public List<WebElement> tableElementi;
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
+
 
 
 }

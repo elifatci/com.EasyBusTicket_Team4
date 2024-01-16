@@ -14,14 +14,14 @@ public class TC {
         Driver.getDriver().get("https://qa.easybusticket.com/");
         VisitorHomepage homepage = new VisitorHomepage();
         //2. Cookies kabul edin
-        //Cookies varsa click yapar, yoksa kod calismaya devam eder
+             //Cookies varsa click yapar, yoksa kod calismaya devam eder
         if (homepage.ButonCookieAccept.isDisplayed() && homepage.ButonCookieAccept.isEnabled()) {
             homepage.ButonCookieAccept.click();
         }
         //3. Footer'a kadar inin
         ReusableMethods.clickWithJS(homepage.footer);
         //4. "Useful Links", "Policies", "Contact Info" yazilarini dogrulayin
-        //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
+            //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
         SoftAssert softAssert = new SoftAssert();
         String expectedUsefulLinksText = "Useful Links";
         String actualUsefulLinksText = homepage.usefulLinksFooter.getText();
@@ -33,12 +33,11 @@ public class TC {
         String actualContactInfoText = homepage.contactInfoFooter.getText();
         softAssert.assertEquals(actualContactInfoText, expectedContactInfoText, "different");
         //5. About,FAQs,Blog,Contact linklerine tek tek tikleyip ilgili sayfaya yonlendirildigini dogrulayin
-        //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
+            //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
         ReusableMethods.clickWithJS(homepage.aboutFooter);
         String expectedAboutPageText = "About";
         String actualAboutPageText = homepage.aboutPage.getText();
         softAssert.assertEquals(actualAboutPageText, expectedAboutPageText, "different");
-
         ReusableMethods.clickWithJS(homepage.ButtonFAQs);
         String expectedFAQsText = "FAQs";
         String actualFAQsText = homepage.faqsPage.getText();
@@ -49,13 +48,10 @@ public class TC {
         String actualBlogText = homepage.blogPage.getText();
         softAssert.assertEquals(actualBlogText, expectedBlogText, "different");
 
-        //Bug oldugundan dolayi calistirilmiyor
-        //ReusableMethods.clickWithJS(homepage.ButtonContact);
-        //String expectedContactText = "Contact";
-        //String actualContactText = homepage.contactUsPage.getText();
-        //softAssert.assertEquals(actualContactText,expectedContactText,"different");
-        //Expected :Contact
-        //Actual   :Contact Us
+        ReusableMethods.clickWithJS(homepage.ButtonContact);
+        String expectedContactText = "Contact";
+        String actualContactText = homepage.contactUsPage.getText();
+        softAssert.assertEquals(actualContactText,expectedContactText,"different");
 
         //6. Privacy Policy,Terms and Conditions,Ticket Policies linklerine tek tek tikleyip ilgili sayfaya yonlendirildigini dogrulayin
         //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
