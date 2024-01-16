@@ -8,15 +8,17 @@ import pages.AdminDashboard;
 import pages.UserDashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
 import java.util.List;
 
-public class TC {
+public class TC extends TestBaseRapor {
     List<WebElement> baslikVeIcerikElementList;
     List<String> baslikVeIcerikList;
 
     @Test
     public void test01() {
+        extentTest = extentReports.createTest("1");
         //1.“ https://qa.easybusticket.com/admin” adresine gider
         Driver.getDriver().get("https://qa.easybusticket.com/admin");
         //2. Admin Login sayfasinda geçerli username ve geçerli password girerek login olur

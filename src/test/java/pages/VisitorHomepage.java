@@ -228,5 +228,5 @@ public class VisitorHomepage {
 
 
 
-
+    @FindBy(xpath = "//*[@href='tel:+1 (603) 624-1800']") public WebElement telefonNo;
 }
