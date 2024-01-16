@@ -669,6 +669,8 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
 
+    //Trip Page day box
+    @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
     @FindBy(xpath = "(//*[@class='las la-desktop'][1])") public WebElement allRequestsAction;
     @FindBy(xpath = "(//*[@class='col-md-9'])[2]") public WebElement senderInformationRequest;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[2]") public WebElement timeOfRequest;
@@ -700,5 +702,6 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+
 
 }

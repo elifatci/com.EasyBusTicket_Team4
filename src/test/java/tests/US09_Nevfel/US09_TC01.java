@@ -26,6 +26,8 @@ public class US09_TC01 {
         visitorHomepage.ButtonSignUp.click();
         //5. Sign up sayfaya eriştiğini  SignUp Your Account yazısı ve kayıt formu penceresi ile doğrular.
         SoftAssert softAssert=new SoftAssert();
+        //softAssert.assertTrue(visitorHomepage.signUpYourAccountAndRegisterForm
+          //      .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
                 .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         //6.First Name text box'ına  tıklar ve geçerli bir isim girer.
