@@ -8,7 +8,7 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US12_TC01 {
+public class US12_TC02 {
     @Test
     public void test01() throws InterruptedException {
         //Launch browser
@@ -25,8 +25,8 @@ public class US12_TC01 {
 
 
         //Enter username, password and click Log in
-        visitorHomepage.textBoxUsername.sendKeys("solomon");
-        visitorHomepage.textBoxPassword.sendKeys("Solomon61.");
+        visitorHomepage.textBoxUsername.sendKeys("rsarialtin");
+        visitorHomepage.textBoxPassword.sendKeys("123Br.");
         visitorHomepage.buttonLogin.click();
 
         //Verify you are at user dashboard
@@ -35,6 +35,10 @@ public class US12_TC01 {
         //by Dashboard text on User Dashboard page
         UserDashboard userDashboard = new UserDashboard();
         softAssert.assertEquals(userDashboard.textDashboard.getText(), "Dashboard");
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", userDashboard.logoElementi);
+        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("easyBusUrl")));
 
 
 }}
