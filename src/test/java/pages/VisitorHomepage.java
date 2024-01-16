@@ -200,6 +200,23 @@ public class VisitorHomepage {
     @FindBy(xpath = "//*[text()='Last Reply']") public WebElement textLastReply;
 
 
+    //SignUp olamadığında çıkan Alert
+    @FindBy(xpath = "//*[text()='You already have an account please Sign in ']") public WebElement nonSignUp;
+
+    //Sign in sayfasında Forgot Password Text'ine tıklandığında çıkan Reset Password sayfası
+    @FindBy(xpath = "//*[@class='form--control']") public WebElement dropDownSelectOneResetPage;
+    @FindBy(xpath = "(//*[text()='E-Mail Address'])[2]") public WebElement emailAddressYazisiResetPage;
+    @FindBy(xpath = "//*[@class='form--control ']") public WebElement textBoxEmailAddressResetPage;
+    @FindBy(xpath = "(//*[text()='Username'])[2]") public WebElement usernameYazisiResetPage;
+    @FindBy(xpath = "//*[@class='form--control ']") public WebElement textBoxUsernameResetPage;
+    @FindBy(xpath = "//*[text()='Send Password Code']") public WebElement buttonSendPasswordCodeResetPage;
+    @FindBy(xpath = "//*[text='Password reset email sent successfully']") public WebElement resetEmailYazisiResetPage;
+
+    //Account Recovery page'deki Try to send again texti
+    @FindBy(xpath = "//*[text()='Try to send again']") public WebElement textTryToSendAgainAccountRecoveryPage;
+
+
+
 
 
 }
