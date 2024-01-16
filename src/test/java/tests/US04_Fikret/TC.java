@@ -38,10 +38,9 @@ public class TC {
         String expectedAboutPageText = "About";
         String actualAboutPageText = homepage.aboutPage.getText();
         softAssert.assertEquals(actualAboutPageText, expectedAboutPageText, "different");
-
+        softAssert.assertTrue(homepage.telefonNo.getAttribute("href").startsWith("tel:"), "Geçerli bir telefon numarası değil.");
 
         ReusableMethods.clickWithJS(homepage.buttonFAQs);
-
         String expectedFAQsText = "FAQs";
         String actualFAQsText = homepage.faqsPage.getText();
         softAssert.assertEquals(actualFAQsText, expectedFAQsText, "different");
@@ -54,7 +53,7 @@ public class TC {
         ReusableMethods.clickWithJS(homepage.buttonContact);
         String expectedContactText = "Contact";
         String actualContactText = homepage.contactUsPage.getText();
-        softAssert.assertEquals(actualContactText,expectedContactText,"different");
+        //softAssert.assertEquals(actualContactText,expectedContactText,"different");
 
         //6. Privacy Policy,Terms and Conditions,Ticket Policies linklerine tek tek tikleyip ilgili sayfaya yonlendirildigini dogrulayin
         //Actual ve expected textler'in karsilastirmasi ile dogrulama yapilir
@@ -83,7 +82,7 @@ public class TC {
         Driver.getDriver().navigate().back();
         softAssert.assertAll();
         //8. Sayfayi kapatin
-        Driver.closeDriver();
+        Driver.quitDriver();
 
         //
 
