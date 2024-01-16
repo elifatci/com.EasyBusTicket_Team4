@@ -12,13 +12,15 @@ public class VisitorHomepage {
     }
 
     //Visitor header elements
-    @FindBy (xpath = "//*[text()=\"Home\"]") public WebElement ButtonHome;
-    @FindBy (xpath = "//*[text()='About']") public  WebElement ButtonAbout;
-    @FindBy (xpath = "//*[text()='FAQs']") public WebElement ButtonFAQs;
-    @FindBy (xpath = "//*[text()='Blog']") public WebElement ButtonBlog;
-    @FindBy (xpath = "//*[text()='Contact']") public WebElement ButtonContact;
-    @FindBy (xpath = "//*[text()='Buy Tickets']") public WebElement ButtonBuyTickets;
-    @FindBy(xpath = "//img[@alt='Logo']") public WebElement LogoEasyBuyTickets;
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerTop;
+    @FindBy(xpath = "//*[@class='header-top']") public WebElement headerButtom;
+    @FindBy (xpath = "//*[text()=\"Home\"]") public WebElement buttonHome;
+    @FindBy (xpath = "//*[text()='About']") public  WebElement buttonAbout;
+    @FindBy (xpath = "//*[text()='FAQs']") public WebElement buttonFAQs;
+    @FindBy (xpath = "//*[text()='Blog']") public WebElement buttonBlog;
+    @FindBy (xpath = "//*[text()='Contact']") public WebElement buttonContact;
+    @FindBy (xpath = "//*[text()='Buy Tickets']") public WebElement buttonBuyTickets;
+    @FindBy(xpath = "//img[@alt='Logo']") public WebElement logoEasyBuyTickets;
     @FindBy(xpath = "//a[@class='sign-in']") public WebElement ButtonSignIn;
     @FindBy(xpath = "//a[@class='sign-up']") public WebElement ButtonSignUp;
     @FindBy(xpath = "//h2[text()='Blog Details']") public WebElement TextBlogDetails;
@@ -68,6 +70,7 @@ public class VisitorHomepage {
     @FindBy(id = "subject") public WebElement PlaceholderSubject;
     @FindBy(id = "msg") public WebElement PlaceholderMessage;
     @FindBy(className = "contact-button") public WebElement ButtonSendUsMessage;
+    @FindBy (xpath = "//div[@class=\"map-wrapper\"]") public WebElement mapGoogle;
 
     //Contact Sayfasındaki maps bö
     @FindBy(xpath = "//button[@aria-label='Zoom in']") public WebElement IconZoomIn;
@@ -134,10 +137,10 @@ public class VisitorHomepage {
 
     // All footer
     @FindBy(className ="footer-top")public WebElement footer;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[5]")public WebElement twitterFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[6]")public WebElement facebookFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[7]")public WebElement youtubeFooter;
-    @FindBy(xpath = "(//*[@height=\"1em\"])[8]")public WebElement instagramFooter;
+    @FindBy(xpath = "//*[@href='https://www.twitter.com']")public WebElement twitterFooter;
+    @FindBy(xpath = "//*[@href='https://www.facebook.com']")public WebElement facebookFooter;
+    @FindBy(xpath = "//*[@href='https://www.youtube.com']")public WebElement youtubeFooter;
+    @FindBy(xpath = "//*[@href='https://www.instagram.com']")public WebElement instagramFooter;
     @FindBy(xpath = "(//img[@alt=\"Logo\"])[2]")public WebElement easyBusTicketImageFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[1]")public WebElement usefulLinksFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[2]")public WebElement policiesFooter;
@@ -151,7 +154,7 @@ public class VisitorHomepage {
     @FindBy(xpath = "(//a)[30]")public WebElement ticketPoliciesFooter;
     @FindBy(xpath = "(//a)[31]")public WebElement phoneNumberFooter;
     @FindBy(xpath = "(//a)[32]")public WebElement infoEmailFooter;
-    @FindBy(xpath = "/html/body/section[6]/div/div/div/div[4]/div/ul/li[1]/text()[2]")public WebElement locacionFooter;
+    @FindBy(xpath = "/html/body/section[6]/div/div/div/div[4]/div/ul/li[1]/text()[2]")public WebElement locationFooter;
 
     // Footer'dan Yönlendirilen Sayfalar
     @FindBy(xpath = "//h2[text()=\"About\"]")public WebElement aboutPage;
@@ -188,6 +191,15 @@ public class VisitorHomepage {
     @FindBy(id = "password-confirm") public WebElement PlaceholderConfirmPassword;
     @FindBy(id ="agree") public WebElement CheckListAgree;
     @FindBy(xpath = "//button[@class='account-button w-100']") public WebElement ButtonSignUpSignUpPage;
+    @FindBy(xpath = "//*[@*='account-form-wrapper']") public WebElement SignUpYourAccountAndRegisterForm;
+
+    @FindBy(xpath = "//*[text()='Support Tickets']") public WebElement textSupportTickets;
+    @FindBy(xpath = "//*[text()='Subject']") public WebElement textSubject;
+    @FindBy(xpath = "//*[text()='Status']") public WebElement textStatus;
+    @FindBy(xpath = "//*[text()='Priority']") public WebElement textPriority;
+    @FindBy(xpath = "//*[text()='Last Reply']") public WebElement textLastReply;
+
+
 
 
 }

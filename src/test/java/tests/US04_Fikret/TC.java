@@ -38,17 +38,20 @@ public class TC {
         String expectedAboutPageText = "About";
         String actualAboutPageText = homepage.aboutPage.getText();
         softAssert.assertEquals(actualAboutPageText, expectedAboutPageText, "different");
-        ReusableMethods.clickWithJS(homepage.ButtonFAQs);
+
+
+        ReusableMethods.clickWithJS(homepage.buttonFAQs);
+
         String expectedFAQsText = "FAQs";
         String actualFAQsText = homepage.faqsPage.getText();
         softAssert.assertEquals(actualFAQsText, expectedFAQsText, "different");
 
-        ReusableMethods.clickWithJS(homepage.ButtonBlog);
+        ReusableMethods.clickWithJS(homepage.buttonBlog);
         String expectedBlogText = "Blog";
         String actualBlogText = homepage.blogPage.getText();
         softAssert.assertEquals(actualBlogText, expectedBlogText, "different");
 
-        ReusableMethods.clickWithJS(homepage.ButtonContact);
+        ReusableMethods.clickWithJS(homepage.buttonContact);
         String expectedContactText = "Contact";
         String actualContactText = homepage.contactUsPage.getText();
         softAssert.assertEquals(actualContactText,expectedContactText,"different");

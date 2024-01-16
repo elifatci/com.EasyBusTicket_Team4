@@ -19,7 +19,7 @@ public class US06_TC02 {
         VisitorHomepage visitorHomepage=new VisitorHomepage();
         JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
         visitorHomepage.ButonCookieAccept.click();
-        js.executeScript("arguments[0].click();",visitorHomepage.ButtonFAQs);
+        js.executeScript("arguments[0].click();",visitorHomepage.buttonFAQs);
         //Click on 'What is EasyBusTicket, and what services does it provide?' textbox
         js.executeScript("arguments[0].click();",visitorHomepage.textFirstQuestion);
         //Verify that the answer is visible
