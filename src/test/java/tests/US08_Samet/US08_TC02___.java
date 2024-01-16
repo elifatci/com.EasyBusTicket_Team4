@@ -31,7 +31,7 @@ public class US08_TC02___ {
             //  Verify the email element is active on the 'Contact' page.
             softAssert.assertTrue(homepage.IconEmailUs.isEnabled()); // çözülemedi...!!!
             softAssert.assertAll();
-             Driver.getDriver().quit();
+             //Driver.getDriver().quit();
 
         }
 
