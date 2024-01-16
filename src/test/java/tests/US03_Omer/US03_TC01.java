@@ -63,6 +63,7 @@ public class US03_TC01 {
         softAssert.assertTrue(homepage.Blogyazisi3.isDisplayed(),"blog yazısı3 görünmüyor");
 
         //8.Browser kapatılır.
+        softAssert.assertAll();
         Driver.closeDriver();
 
     }
