@@ -16,7 +16,7 @@ import java.time.Duration;
 
 public class US16_TC04 {
     @Test
-    public void test01(){
+    public void test01() {
         //1.Launch Browser
         //2.Navigate to url "https://www.qa.easybusticket.com/"homepage.
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
@@ -37,7 +37,7 @@ public class US16_TC04 {
 
         //6- Confirm that there is a "New Ticket" button on the opened page
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(userDashboard.buttonNewTicket.isDisplayed(),"New ticket button is not displayed");
+        softAssert.assertTrue(userDashboard.buttonNewTicket.isDisplayed(), "New ticket button is not displayed");
 
         //7- Click on the "New Ticket" button.
         userDashboard.buttonNewTicket.click();
@@ -48,8 +48,7 @@ public class US16_TC04 {
         userDashboard.messageSection.sendKeys("I have a message");
         ReusableMethods.waitFor(2);
         ReusableMethods.clickWithJS(userDashboard.submitButtonu);
-
-
-
+        softAssert.assertAll();
+        Driver.closeDriver();
     }
 }

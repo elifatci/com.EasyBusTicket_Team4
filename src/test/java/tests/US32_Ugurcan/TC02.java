@@ -24,7 +24,7 @@ public class TC02 {
         page.passwordKutusu.sendKeys("123123123");
         page.loginButonu.click();
 
-        //4-Manage trips butonu tıklanir ve  menü de Route butonuna tiklanir.
+        // 4. Manage trips butonu tıklanir ve  menü de Route butonuna tiklanir.
         ReusableMethods.clickWithJS(page.manageTrips);
         ReusableMethods.clickWithJS(page.route);
 

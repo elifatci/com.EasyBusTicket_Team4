@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 import java.util.List;
+import java.util.logging.XMLFormatter;
 
 public class AdminDashboard {
 
@@ -666,6 +667,54 @@ public class AdminDashboard {
     @FindBy(css = ".row") public List<WebElement> tableElementi;
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
+
+    //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement fleetTypePage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement vehiclePage;
+
+    //Fleet Type Page devamı..
+    @FindBy(xpath = "(//*[@type='number'])[1]") public WebElement textBoxNonOfDeck;
+    @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement textBoxSeatsOfDeck1;
+    @FindBy(xpath = "(//*[@class='form-control'])[5]") public WebElement textBoxseatsOfDeck2;
+    @FindBy(xpath = "//*[text()='Fleet type saved successfully']") public WebElement alertAddFleetType;
+
+    @FindBy(xpath = "/html/body/div[2]") public WebElement alertSeatLayoutSuccesfuullYazisi;
+
+    //Trip Page day box
+    @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
+    @FindBy(xpath = "(//*[@class='las la-desktop'][1])") public WebElement allRequestsAction;
+    @FindBy(xpath = "(//*[@class='col-md-9'])[2]") public WebElement senderInformationRequest;
+    @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[2]") public WebElement timeOfRequest;
+    @FindBy(xpath = "(//p)[7]") public WebElement requestMessage;
+    @FindBy(xpath = "//*[@class='form-control']") public WebElement yourMessage;
+    @FindBy(xpath = "(//*[@name='replayTicket'])[1]") public WebElement buttonReply;
+    @FindBy(xpath = "(//*[text()='Message is added'])[1]") public WebElement addedReply;
+    @FindBy(xpath = "//*[@class='btn btn--danger btn-sm']") public WebElement buttonCloseTicket;
+    @FindBy(xpath = "(//*[@class='modal-body'])[1]") public WebElement textCloseTicket;
+    @FindBy(xpath = "//*[@class='btn btn--success']") public WebElement closeTicketButton;
+    @FindBy(xpath = "//*[@class='badge badge--dark py-1 px-2']") public WebElement textClosed;
+    @FindBy(xpath = "(//button[@type='button'])[8]") public WebElement buttonDelete;
+    @FindBy(xpath = "(//*[@class='modal-body'])[2]") public WebElement textDelete;
+    @FindBy(xpath = "//*[@class='btn btn--danger']") public WebElement buttonDelete2;
+    @FindBy(xpath = "//*[@class='col-md-9']") public WebElement pendingSenderInformation;
+    @FindBy(xpath = "//*[@class='text-muted font-weight-bold my-3']") public WebElement pendingTime;
+    @FindBy(xpath = "(//p)[4]") public WebElement pendingMessage;
+    @FindBy(xpath = "//*[@class='form-control']") public WebElement pendingYourMessage;
+    @FindBy(xpath = "(//*[@name='replayTicket'])[1]") public WebElement pendingReply;
+    @FindBy(xpath = "(//*[@class='col-md-9'])[1]") public WebElement pendingAddedReply;
+    @FindBy(xpath = "//*[@class='btn btn--danger btn-sm']") public WebElement pendingCloseTicket;
+    @FindBy(xpath = "(//*[@class='modal-body'])[1]") public WebElement pendingTextCloseTicket;
+    @FindBy(xpath = "//*[@class='btn btn--success']") public WebElement pendingCloseTicketButton;
+    @FindBy(xpath = "//*[text()='Closed']") public WebElement pendingTextClosed;
+    @FindBy(xpath = "(//*[@type='button'])[8]") public WebElement pendingDeleteButton;
+    @FindBy(xpath = "(//*[@class='modal-body'])[2]") public WebElement pendingTextDelete;
+    @FindBy(xpath = "//*[@class='btn btn--danger']") public WebElement pendingDelete;
+    @FindBy(xpath = "(//*[@class='icon-btn  ml-1'])[1]") public WebElement ActionclosedRequests;
+    @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
+    @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
+    @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+
 
 
 }

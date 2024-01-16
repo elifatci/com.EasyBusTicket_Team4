@@ -45,8 +45,8 @@ public class US20_TC01 {
         visitorHomepage.buttonSendPasswordCodeResetPage.click();
 
         //11."Password reset email sent successfully" yazısı ile  kodun mail adresine gönderildiğini doğrular.
-        ReusableMethods.waitForVisibility(visitorHomepage.resetEmailYazisiResetPage,3);
-        softAssert.assertTrue(visitorHomepage.resetEmailYazisiResetPage
+        ReusableMethods.waitForVisibility(visitorHomepage.alertPasswordResetSuccessfullyYazisi,3);
+        softAssert.assertTrue(visitorHomepage.alertPasswordResetSuccessfullyYazisi
                                              .isDisplayed(),"Password reset email sent successfully yazisi görüntülenemedi!");
         ReusableMethods.wait(2);
         //12.Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntüler.
@@ -64,5 +64,6 @@ public class US20_TC01 {
 
         softAssert.assertAll();
         //16.Browser'ı kapatır.
+        Driver.closeDriver();
     }
 }
