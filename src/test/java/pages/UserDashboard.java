@@ -110,7 +110,7 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement fAQsPageText;
     @FindBy(xpath = "(//a[@href='https://qa.easybusticket.com/blog'])[2]") public WebElement blogLinki;
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement blogPageText;
-    @FindBy(xpath = "(//a[@href='https://qa.easybusticket.com/contact'])[2]") public WebElement contactLinki;
+    @FindBy(xpath = "//a[@href='https://qa.easybusticket.com/contact']") public WebElement contactLinki;
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement contactPageText;
 
     //Policies altindaki linkler ve tıklandığında gidilen sayfa textleri
@@ -224,12 +224,15 @@ public class UserDashboard {
     @FindBy(id = "UGF5bWVudCUyMGNhcHR1cmVkJTIwc3VjY2Vzc2Z1bGx5LmdyZWVu") public WebElement messagePaymentSuccesfully;
     @FindBy(css = ".btn.btn--success.confirm-btn.btn--sm") public WebElement buttonConfirmPaymentStripe;
     @FindBy(xpath = "//button[@type='button']") public WebElement buttonDownloadTicket;
-
+    @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
+  
     //koltuklarin listesi
     @FindBy(xpath = "//*[@class='seat']") public List<WebElement> listBosKoltuk;
     @FindBy(xpath = "//*[@class='seat selected']") public List<WebElement> listDoluKoltuk;
 
 
+    // Gönderilen mesaj
+    @FindBy (xpath ="/html/body/div[5]/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/p[2]" ) public WebElement messageText;
 
 
 

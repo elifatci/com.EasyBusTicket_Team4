@@ -28,6 +28,7 @@ public class US16_TC03 {
 
         //5.Click on the link for "Requests" under the Support Requests menu.
         UserDashboard userDashboard = new UserDashboard();
+        ReusableMethods.waitFor(2);
         userDashboard.headerSupportRequest.click();
         userDashboard.Requests.click();
 
@@ -38,6 +39,11 @@ public class US16_TC03 {
         ReusableMethods.clickWithJS(userDashboard.yorumAlani);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(userDashboard.senderInformation.isDisplayed(),"Sender's information is not displayed");
+
+        //8.Confirm that the message information of the request is displayed.
+        softAssert.assertTrue(userDashboard.closedSenderInfo.isDisplayed(),"the message information of the request is not displayed");
+        softAssert.assertAll();
+        Driver.closeDriver();
 
     }
 

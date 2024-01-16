@@ -1,12 +1,16 @@
 package tests.US20_Nevfel;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+
+import java.time.Duration;
 
 public class US20_TC02 {
     @Test
@@ -44,9 +48,9 @@ public class US20_TC02 {
         visitorHomepage.buttonSendPasswordCodeResetPage.click();
 
         //11."Password reset email sent successfully" yazısı ile  kodun mail adresine gönderildiğini doğrular.
-        //ReusableMethods.waitForVisibility(visitorHomepage.resetEmailYazisiResetPage,3);
-        softAssert.assertTrue(visitorHomepage.resetEmailYazisiResetPage
-                .isDisplayed(),"Password reset email sent successfully yazisi görüntülenemedi!");
+      ReusableMethods.waitForVisibility(visitorHomepage.alertPasswordResetSuccessfullyYazisi,4);
+        softAssert.assertTrue(visitorHomepage.alertPasswordResetSuccessfullyYazisi
+                .isDisplayed(),"Password reset email sent successfully yazısı görüntülenemedi");
         ReusableMethods.wait(2);
         //12.Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntüler.
         String expectedTitle="Easy Bus Ticket - Account Recovery";
@@ -63,5 +67,6 @@ public class US20_TC02 {
 
         softAssert.assertAll();
         //16.Browser'ı kapatır.
+        Driver.closeDriver();
     }
 }
