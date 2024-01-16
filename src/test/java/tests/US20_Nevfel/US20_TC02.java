@@ -3,15 +3,14 @@ package tests.US20_Nevfel;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.UserDashboard;
 import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-public class US20_TC01 {
+public class US20_TC02 {
     @Test
-    public void test01(){
+    public void test02(){
         //1.Browser açar
         //2."https://qa.easybusticket.com/" anasayfasına gider
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
@@ -23,7 +22,7 @@ public class US20_TC01 {
         //4.Login sayfasına geldiğini doğrular.
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
-                                             .isDisplayed(),"Signup your account and Register form yazısı görülmedi!");
+                .isDisplayed(),"Signup your account and Register form yazısı görülmedi!");
         //5.Forgot Password linkine tıklar.
         visitorHomepage.TextForgetPassword.click();
         ReusableMethods.wait(2);
@@ -31,23 +30,23 @@ public class US20_TC01 {
         String expectedResetUrl="https://qa.easybusticket.com/password/reset";
         String actualResetUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualResetUrl,expectedResetUrl,"Url'ler aynı değildir!");
-        //7.Select One select butonuna  tıklanır ve emaili seçer.
-        Select selectEmail=new Select(visitorHomepage.dropDownSelectOneResetPage);
-        selectEmail.selectByValue("email");
+        //7.Select One select butonuna  tıklanır ve Username'i  seçer.
+        Select selectUsername=new Select(visitorHomepage.dropDownSelectOneResetPage);
+        selectUsername.selectByValue("username");
         ReusableMethods.wait(2);
-        //8.Emaili seçtiğinde  alttaki textbox da email yazısının görüntülendiğini doğrular.
-        softAssert.assertTrue(visitorHomepage.emailAddressYazisiResetPage
-                                             .isDisplayed(),"Email Address yazısı görüntülenemedi!");
-        //9.Email textbox'ına kayıtlı  Email adresini  girer.
-        visitorHomepage.textBoxEmailAddressResetPage.sendKeys("y.nevfel10@tutanota.com");
+        //8.Username seçtiğinde  alttaki textbox da username  yazısının görüntülendiğini doğrular.
+        softAssert.assertTrue(visitorHomepage.usernameYazisiResetPage
+                .isDisplayed(),"Username  yazısı görüntülenemedi!");
+        //9.Username  textbox'ına kayıtlı username'i  girer.
+        visitorHomepage.textBoxUsernameResetPage.sendKeys("nevfel");
         ReusableMethods.wait(2);
         //10.Send Password  Code butonuna  tıklar.
         visitorHomepage.buttonSendPasswordCodeResetPage.click();
 
         //11."Password reset email sent successfully" yazısı ile  kodun mail adresine gönderildiğini doğrular.
-        ReusableMethods.waitForVisibility(visitorHomepage.resetEmailYazisiResetPage,3);
+        //ReusableMethods.waitForVisibility(visitorHomepage.resetEmailYazisiResetPage,3);
         softAssert.assertTrue(visitorHomepage.resetEmailYazisiResetPage
-                                             .isDisplayed(),"Password reset email sent successfully yazisi görüntülenemedi!");
+                .isDisplayed(),"Password reset email sent successfully yazisi görüntülenemedi!");
         ReusableMethods.wait(2);
         //12.Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntüler.
         String expectedTitle="Easy Bus Ticket - Account Recovery";

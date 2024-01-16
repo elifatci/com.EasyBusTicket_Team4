@@ -28,6 +28,8 @@ public class US09_TC01 {
         SoftAssert softAssert=new SoftAssert();
         //softAssert.assertTrue(visitorHomepage.signUpYourAccountAndRegisterForm
           //      .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
+        softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
+                .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         //6.First Name text box'ına  tıklar ve geçerli bir isim girer.
         //7.Last Name text box'ına tıklar ve geçerli bir soyisim girer.
         //8.Mobile butonuna tıklar  ve geçerli bir numara girer.
@@ -37,8 +39,8 @@ public class US09_TC01 {
         //12.ConfirmPassword  butonuna tıklar ve geçerli bir password girer.
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
-        //String password=faker.internet()
-         //                   .password(7,9,true,true,true);
+        String password=faker.internet()
+               .password(7,9,true,true,true);
         String username= faker.name().lastName()+"of123";
         ReusableMethods.wait(2);
 
