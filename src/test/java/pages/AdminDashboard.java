@@ -663,7 +663,7 @@ public class AdminDashboard {
     //Fleet Type page No-of Deck Alt ok
     @FindBy(xpath = "(//*[@placeholder='Enter Number of Deck'])[2]") public WebElement iconNoOfDeckDown;
 
-    @FindBy(css = ".row") public List<WebElement> allUsersTable;
+    @FindBy(css = ".row") public List<WebElement> tableElementi;
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
