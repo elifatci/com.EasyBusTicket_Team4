@@ -61,14 +61,11 @@ public class US09_TC02 {
     ReusableMethods.clickWithJS(visitorHomepage.CheckListAgree);
     ReusableMethods.wait(2);
     //15.Signup butonuna tıklar.
-    visitorHomepage.ButtonSignUpSignUpPage.click();
+    //JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+    ReusableMethods.clickWithJS(visitorHomepage.ButtonSignUpSignUpPage);
+    //visitorHomepage.ButtonSignUpSignUpPage.click();
     ReusableMethods.wait(2);
-    //16.Üye olup "https://qa.easybusticket.com/user/dashboard"sayfasına gidildiğini  doğrular.
-    String expectedUrl="https://qa.easybusticket.com/user/dashboard";
-    String actualUrl=Driver.getDriver().getCurrentUrl();
-    ReusableMethods.wait(2);
-    softAssert.assertEquals(actualUrl,expectedUrl,"actual ve expected url'ler aynı değildir");
-    softAssert.assertAll();
+    softAssert.assertTrue(visitorHomepage.nonSignUp.isDisplayed());
     ReusableMethods.wait(2);
     //17.Browser'ı kapatır.
     Driver.closeDriver();

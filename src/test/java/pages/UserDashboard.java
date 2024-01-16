@@ -225,7 +225,9 @@ public class UserDashboard {
     @FindBy(css = ".btn.btn--success.confirm-btn.btn--sm") public WebElement buttonConfirmPaymentStripe;
     @FindBy(xpath = "//button[@type='button']") public WebElement buttonDownloadTicket;
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
-
+  
+    //koltuklarin listesi
+    @FindBy(className = "seat-wrapper") public List<WebElement> tableSeat;
 
 
 
