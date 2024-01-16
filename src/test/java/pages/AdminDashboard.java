@@ -657,6 +657,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='card-body'])[4]") public  WebElement loginByOS;
     @FindBy(xpath = "(//*[@class='card-body'])[5]") public  WebElement loginByCountry;
 
+
     //Fleet Type page No-of Deck Üst ok
     @FindBy(xpath = "(//*[@placeholder='Enter Number of Deck'])[1]") public WebElement iconNoOfDeckUp;
     //Fleet Type page No-of Deck Alt ok
@@ -665,5 +666,6 @@ public class AdminDashboard {
     @FindBy(css = ".row") public List<WebElement> allUsersTable;
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
+
 
 }
