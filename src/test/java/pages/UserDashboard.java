@@ -110,7 +110,7 @@ public class UserDashboard {
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement fAQsPageText;
     @FindBy(xpath = "(//a[@href='https://qa.easybusticket.com/blog'])[2]") public WebElement blogLinki;
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement blogPageText;
-    @FindBy(xpath = "(//a[@href='https://qa.easybusticket.com/contact'])[2]") public WebElement contactLinki;
+    @FindBy(xpath = "//a[@href='https://qa.easybusticket.com/contact']") public WebElement contactLinki;
     @FindBy(xpath = "(//*[@class='title'])[1]") public WebElement contactPageText;
 
     //Policies altindaki linkler ve tıklandığında gidilen sayfa textleri
@@ -228,6 +228,9 @@ public class UserDashboard {
   
     //koltuklarin listesi
     @FindBy(className = "seat-wrapper") public List<WebElement> tableSeat;
+
+    // Gönderilen mesaj
+    @FindBy (xpath ="/html/body/div[5]/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/p[2]" ) public WebElement messageText;
 
 
 
