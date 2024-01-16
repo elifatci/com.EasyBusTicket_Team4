@@ -668,6 +668,18 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
+    //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement fleetTypePage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement vehiclePage;
+
+    //Fleet Type Page devamı..
+    @FindBy(xpath = "(//*[@type='number'])[1]") public WebElement textBoxNonOfDeck;
+    @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement textBoxSeatsOfDeck1;
+    @FindBy(xpath = "(//*[@class='form-control'])[5]") public WebElement textBoxseatsOfDeck2;
+    @FindBy(xpath = "//*[text()='Fleet type saved successfully']") public WebElement alertAddFleetType;
+
+    @FindBy(xpath = "/html/body/div[2]") public WebElement alertSeatLayoutSuccesfuullYazisi;
 
     //Trip Page day box
     @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
@@ -702,6 +714,7 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+
 
 
 }

@@ -210,7 +210,7 @@ public class VisitorHomepage {
     @FindBy(xpath = "(//*[text()='Username'])[2]") public WebElement usernameYazisiResetPage;
     @FindBy(xpath = "//*[@class='form--control ']") public WebElement textBoxUsernameResetPage;
     @FindBy(xpath = "//*[text()='Send Password Code']") public WebElement buttonSendPasswordCodeResetPage;
-    @FindBy(xpath = "//*[text='Password reset email sent successfully']") public WebElement resetEmailYazisiResetPage;
+
 
     //Account Recovery page'deki Try to send again texti
     @FindBy(xpath = "//*[text()='Try to send again']") public WebElement textTryToSendAgainAccountRecoveryPage;
@@ -219,6 +219,12 @@ public class VisitorHomepage {
     @FindBy (xpath = "/html/body/div[6]") public WebElement messageYourmessagehasbeensent;
 
   @FindBy (xpath = "/html/body/script[10]/text()") public WebElement messageYourmessagehasbeensent2;
+
+    //Reset Password işleminin başarılı olarak gerçekleştiğini belirten alert yazısı
+    @FindBy(xpath = "//*[@class='iziToast-message slideIn']") public WebElement alertPasswordResetSuccessfullyYazisi;
+
+
+
 
 
 
