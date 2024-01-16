@@ -666,4 +666,19 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
+
+    //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement fleetTypePage;
+    @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement vehiclePage;
+
+    //Fleet Type Page devamı..
+    @FindBy(xpath = "(//*[@type='number'])[1]") public WebElement textBoxNonOfDeck;
+    @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement textBoxSeatsOfDeck1;
+    @FindBy(xpath = "(//*[@class='form-control'])[5]") public WebElement textBoxseatsOfDeck2;
+    @FindBy(xpath = "//*[text()='Fleet type saved successfully']") public WebElement alertAddFleetType;
+
+    @FindBy(xpath = "/html/body/div[2]") public WebElement alertSeatLayoutSuccesfuullYazisi;
+
+
 }
