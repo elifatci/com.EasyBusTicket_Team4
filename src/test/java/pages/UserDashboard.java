@@ -227,11 +227,12 @@ public class UserDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
   
     //koltuklarin listesi
-    @FindBy(className = "seat-wrapper") public List<WebElement> tableSeat;
+    @FindBy(xpath = "//*[@class='seat']") public List<WebElement> listBosKoltuk;
+    @FindBy(xpath = "//*[@class='seat selected']") public List<WebElement> listDoluKoltuk;
+
 
     // Gönderilen mesaj
     @FindBy (xpath ="/html/body/div[5]/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/p[2]" ) public WebElement messageText;
-
 
 
 
