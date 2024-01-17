@@ -219,6 +219,10 @@ public class VisitorHomepage {
     //Account Recovery page'deki Try to send again texti
     @FindBy(xpath = "//*[text()='Try to send again']") public WebElement textTryToSendAgainAccountRecoveryPage;
 
+
+// Every journey texti
+@FindBy(xpath = "//*[@class='banner-content']") public WebElement textEvery;
+
   // Mesaj gönderilince çıkan alert
     @FindBy (xpath = "/html/body/div[6]") public WebElement messageYourmessagehasbeensent;
 
@@ -226,11 +230,5 @@ public class VisitorHomepage {
 
     //Reset Password işleminin başarılı olarak gerçekleştiğini belirten alert yazısı
     @FindBy(xpath = "//*[@class='iziToast-message slideIn']") public WebElement alertPasswordResetSuccessfullyYazisi;
-
-
-
-
-
-
     @FindBy(xpath = "//*[@href='tel:+1 (603) 624-1800']") public WebElement telefonNo;
 }

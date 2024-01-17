@@ -61,6 +61,9 @@ public class US08_TC03 {
            softAssert.assertAll();
          // Close the page
           Driver.getDriver().close();
+           softAssert.assertAll();
+          // Driver.getDriver().close();
+
 
     }
 }}

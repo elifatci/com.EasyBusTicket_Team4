@@ -34,6 +34,7 @@ public class US08_TC02___ {
             softAssert.assertAll();
             //Close the page
             Driver.getDriver().quit();
+             //Driver.getDriver().quit();
 
         }
 

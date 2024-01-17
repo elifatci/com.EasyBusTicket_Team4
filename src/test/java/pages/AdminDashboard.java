@@ -668,6 +668,21 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
+
+
+    // Manage Users total sayıları
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[2]") public  WebElement allUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[3]") public  WebElement activeUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[4]") public  WebElement bannedUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[5]") public  WebElement emailUnverfiedSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[6]") public  WebElement smsUnverfiedSayi;
+
+
+
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement userSearchTitle;
+
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
+  
     //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
     @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
     @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement fleetTypePage;
@@ -677,9 +692,82 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@type='number'])[1]") public WebElement textBoxNonOfDeck;
     @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement textBoxSeatsOfDeck1;
     @FindBy(xpath = "(//*[@class='form-control'])[5]") public WebElement textBoxseatsOfDeck2;
-    @FindBy(xpath = "//*[text()='Fleet type saved successfully']") public WebElement alertAddFleetType;
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertAddFleetType;
 
-    @FindBy(xpath = "/html/body/div[2]") public WebElement alertSeatLayoutSuccesfuullYazisi;
+    //Seat Layauts Saved Succesfull Alerti yazisi
+    @FindBy(xpath = "/html/body/div[2]") public WebElement alertSeatLayoutSavedSuccesfullYazisi;
+
+    //Manage Fleets Seat Layouts sayfası Action Pen İconu
+    @FindBy(xpath = "(//*[@class='la la-pen'])[1]") public WebElement iconSeatLayoutFirstPenAction;
+
+    //Update Seat Layout penceresi yazisi
+    @FindBy(xpath = "//*[text()=' Update Seat Layouts']") public WebElement textUpdateSeatLayouts;
+
+    //Update Seat Layouts  penceresi Update buttonu
+    @FindBy(xpath = "(//*[@class='btn btn--primary'])[2]") public WebElement buttonUpdateSeatLayoutsUpdate;
+
+    // Update Seat Layouts Succesfull Alerti yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertSeatLayoutUpdateSuccesfullYazisi;
+
+    // Manage Fleets Seat Layouts sayfası Action Trash(çöp kovası) İconu;
+    @FindBy(xpath = "(//*[@class='las la-trash'])[1]") public WebElement iconSeatLayoutFirstTrashAction;
+
+    //Delete Seat Layouts Yazisi
+    @FindBy(xpath = "(//*[@class='modal-title'])[3]") public WebElement textDeleteSeatLayouts;
+
+    //Delete Seat Layouts Delete Buttonu
+    @FindBy(xpath = "(//*[@type='submit'])[4]") public WebElement buttonDeleteSeatLayouts;
+
+    //Seat Layouts Delete Successfull Alerti Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertSeatLayoutDeleteSuccesfullYazisi;
+
+    //Update Seat Layouts textbox'ı
+    @FindBy(xpath = "(//*[@class='form-control'])[2]") public WebElement textBoxLayoutSeatLayouts;
+
+    //Update Fleet Type yazisi
+    @FindBy(xpath = "(//*[@class='modal-title'])[2]") public WebElement textUpdateFleetType;
+
+    //Update Fleet Type Succesfull Alert yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertFleetTypeUpdateSuccesfullYaziElementi;
+
+    //Update Fleet type NonAc Buttonu
+    @FindBy(xpath = "(//*[@class='toggle-handle btn btn-default'])[2]") public WebElement buttonNonAcUpdateFleetType;
+
+   //Fleet Type page Action Slash Eye İconu
+    @FindBy(xpath = "(//*[@*='la la-eye-slash'])[1]") public WebElement iconSlashEyeFleetTypePage;
+
+    //Fleet Type taki Disable Fleet Type Penceresi yazisi
+    @FindBy(xpath = "//*[text()=' Disable Fleet Type']") public WebElement textDisableFleetType;
+
+    //Fleet Type Disable Alerti
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertFleetTypeDisableSuccesfullYazisi;
+
+    //All Vehicle Sayfasında Reg.No ile Yapılan Aramada çıkan görüntü sayfası
+    @FindBy(xpath = "//*[@*='card-body']")public WebElement allVehicleSearchRegNoSonucSayfasi;
+
+    //Add Vehicle Succesfull Alert Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertAddVehicleSuccesfullYazisi;
+
+  //Update Vehicle Succesfull Alert Yazisi
+  @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertUpdateVehicleSuccesfullYazisi;
+
+  //Disable Vehicle Penceresi yazisi;
+    @FindBy(xpath = "(//*[@class='modal-title'])[4]") public WebElement textDisableVehicleWindowWriting;
+
+   //Disable Vehicle Succesfull Alert Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertDisableVehicleSuccesfullYazisi;
+
+
+  //Active Vehicle Penceresi Yazisi
+  @FindBy(xpath = "(//*[@*='modal-title'])[3]") public WebElement textActiveVehicleWindowWritting;
+
+  //Active Vehicle Active Buttonu
+    @FindBy(xpath = "(//*[@class='btn btn--primary'])[4]") public WebElement buttonActiveActiveVehicle;
+
+  //Active Vehicle Succesfull Alert Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertActiveVehicleSuccesfullYazisi;
+
+
 
     //Trip Page day box
     @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
@@ -714,6 +802,7 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+
 
 
 
