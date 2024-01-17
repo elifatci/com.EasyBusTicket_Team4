@@ -6,7 +6,7 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US08_TC002 {
+public class US08_TC02___ {
     @Test
     public void visibilityTest() {
         //  Navigate to "https://qa.easybusticket.com/contact" which is the Contact page of the site
