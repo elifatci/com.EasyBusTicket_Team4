@@ -6,7 +6,7 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US08_TC02___ {
+public class US08_TC02 {
     @Test
     public void visibilityTest() {
         //  Navigate to "https://qa.easybusticket.com/contact" which is the Contact page of the site
@@ -29,9 +29,11 @@ public class US08_TC02___ {
             homepage.textContactUs.click();
             softAssert.assertEquals(expectedUrl,Driver.getDriver().getCurrentUrl());
             //  Verify the email element is active on the 'Contact' page.
-            softAssert.assertTrue(homepage.IconEmailUs.isEnabled()); // çözülemedi...!!!
+            homepage.IconEmailUs.click();
+            softAssert.assertNotEquals(expectedUrl,Driver.getDriver().getCurrentUrl());
             softAssert.assertAll();
-             //Driver.getDriver().quit();
+             //Close the page
+             Driver.getDriver().quit();
 
         }
 
