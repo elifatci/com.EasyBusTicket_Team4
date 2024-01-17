@@ -666,4 +666,26 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='row'])[1]") public List<WebElement> firsLastName;
     @FindBy(xpath = "(//*[@class='row'])[2]") public List<WebElement> emailTelNumber;
 
+
+    // Manage Users total sayıları
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[2]") public  WebElement allUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[3]") public  WebElement activeUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[4]") public  WebElement bannedUsersSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[5]") public  WebElement emailUnverfiedSayi;
+    @FindBy(xpath = "(//*[@class='menu-badge pill bg--primary ml-auto'])[6]") public  WebElement smsUnverfiedSayi;
+
+
+
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@class='page-title']") public WebElement userSearchTitle;
+
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
+
+
+
 }

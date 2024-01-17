@@ -37,7 +37,7 @@ public class TC {
         baslikVeIcerikElementList = adminDashboard.allUsersTable;
         baslikVeIcerikList = ReusableMethods.getElementsText(baslikVeIcerikElementList);
         System.out.println("===========================================================");
-        System.out.println(baslikVeIcerikList);
+        System.out.println(baslikVeIcerikList.size());
         ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
 

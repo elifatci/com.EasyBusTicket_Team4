@@ -215,8 +215,8 @@ public class VisitorHomepage {
     //Account Recovery page'deki Try to send again texti
     @FindBy(xpath = "//*[text()='Try to send again']") public WebElement textTryToSendAgainAccountRecoveryPage;
 
-
-
+// Every journey texti
+@FindBy(xpath = "//*[@class='banner-content']") public WebElement textEvery;
 
 
 }
