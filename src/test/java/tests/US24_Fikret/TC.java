@@ -48,6 +48,11 @@ public class TC extends TestBaseRapor {
         System.out.println("Sayi : " +adminDashboard.table.size());
         extentTest.info("Baslik ve alt verileri goruntuler ve yazdirir");
         //ReusableMethods.wait(2);
+        System.out.println("===========================================================");
+        System.out.println(baslikVeIcerikList.size());
+        ReusableMethods.wait(2);
+        Driver.getDriver().navigate().back();
+
         ReusableMethods.clickWithJS(adminDashboard.activeUsers);
         extentTest.info("Active Users linkine tiklar");
         String actualActiveUsersText = adminDashboard.manageActiveUsersYazisi.getText();
