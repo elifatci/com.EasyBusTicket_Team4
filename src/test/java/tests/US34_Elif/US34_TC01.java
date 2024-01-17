@@ -27,9 +27,10 @@ public class US34_TC01 extends TestBaseRapor {
         AdminDashboard adminDashboard=new AdminDashboard();
         adminDashboard.usernameKutusu.sendKeys("admin31");
         extentTest.info("Kullanici username textboxina gecerli username girer");
-        adminDashboard.passwordKutusu.sendKeys("123123123");
+        adminDashboard.passwordKutusu.sendKeys("123123123e");
         extentTest.info("Kullanici password textboxina gecerli password girer");
         // Click 'login' button
+        adminDashboard.loginButonu.click();
         extentTest.info("Kullanici login butonuna tiklar");
         //Verify dashboard page is visible
         actualTitle=Driver.getDriver().getTitle();
