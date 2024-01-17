@@ -716,5 +716,5 @@ public class AdminDashboard {
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
 
 
-
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
 }
