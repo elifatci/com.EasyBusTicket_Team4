@@ -681,7 +681,7 @@ public class AdminDashboard {
 
     @FindBy(xpath = "//*[@class='page-title']") public WebElement userSearchTitle;
 
-    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
+
   
     //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
     @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
