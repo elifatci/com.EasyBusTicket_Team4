@@ -52,6 +52,7 @@ public class US16_TC02 {
 
 
         softAssert.assertAll();
+        Driver.closeDriver();
 
 
     }

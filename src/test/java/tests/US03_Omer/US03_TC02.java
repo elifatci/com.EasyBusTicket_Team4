@@ -63,6 +63,7 @@ public void US03_TC2_AnasayfaVisitorBiletalma(){
     //11.Üye olmadan bilet alınamaz o yüzden üye olma sayfasına yönlendirdiği doğrulanır.
     softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),"https://qa.easybusticket.com/login","login sayfasına yönlendirilmedi");
     //12.Tarayıcı kapatılır
+    softAssert.assertAll();
     Driver.quitDriver();
 
 

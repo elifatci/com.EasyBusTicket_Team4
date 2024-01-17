@@ -3,13 +3,14 @@ package tests.US08_Samet;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.VisitorHomepage;
+import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US08_TC02 {
+public class US08_TC02___ {
     @Test
     public void visibilityTest() {
         //  Navigate to "https://qa.easybusticket.com/contact" which is the Contact page of the site
-        Driver.getDriver().get("https://qa.easybusticket.com/contact");
+        Driver.getDriver().get(ConfigReader.getProperty("easyBusContactUrl"));
         // Accept the cookie
         VisitorHomepage homepage = new VisitorHomepage();
         if (homepage.ButonCookieAccept.isDisplayed() && homepage.ButonCookieAccept.isEnabled()) {
@@ -24,11 +25,13 @@ public class US08_TC02 {
             // Verify that the map showing the company's location is displayed
             softAssert.assertTrue(homepage.mapGoogle.isEnabled());
             //  Verify the phone element is active on the 'Contact' page.
-            softAssert.assertTrue(homepage.IconCallUs.isEnabled());
+            String expectedUrl=Driver.getDriver().getCurrentUrl();
+            homepage.textContactUs.click();
+            softAssert.assertEquals(expectedUrl,Driver.getDriver().getCurrentUrl());
             //  Verify the email element is active on the 'Contact' page.
-            softAssert.assertTrue(homepage.IconEmailUs.isEnabled());
-
-            // Driver.getDriver().quit();
+            softAssert.assertTrue(homepage.IconEmailUs.isEnabled()); // çözülemedi...!!!
+            softAssert.assertAll();
+             //Driver.getDriver().quit();
 
         }
 

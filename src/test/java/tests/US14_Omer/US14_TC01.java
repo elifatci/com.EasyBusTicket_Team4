@@ -45,6 +45,7 @@ public class US14_TC01 {
         ReusableMethods.waitFor(3);
         ReusableMethods.clickWithJS(userDashboard.buttonClose);
         ReusableMethods.waitFor(3);
+        softAssert.assertAll();
         //11.browser closes
         Driver.closeDriver();
 

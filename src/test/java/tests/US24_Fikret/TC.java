@@ -8,23 +8,25 @@ import pages.AdminDashboard;
 import pages.UserDashboard;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
 import java.util.List;
 
-public class TC {
+public class TC extends TestBaseRapor {
     List<WebElement> baslikVeIcerikElementList;
     List<String> baslikVeIcerikList;
 
     @Test
     public void test01() {
-        //1.“ https://qa.easybusticket.com/admin” adresine gidin
+        extentTest = extentReports.createTest("1");
+        //1.“ https://qa.easybusticket.com/admin” adresine gider
         Driver.getDriver().get("https://qa.easybusticket.com/admin");
-        //2. Admin Login sayfasinda geçerli username ve geçerli password girerek login olun
+        //2. Admin Login sayfasinda geçerli username ve geçerli password girerek login olur
         AdminDashboard adminDashboard = new AdminDashboard();
         adminDashboard.usernameKutusu.sendKeys("admin32");
         adminDashboard.passwordKutusu.sendKeys("Prs12345.");
         ReusableMethods.clickWithJS(adminDashboard.loginButonu);
-        //3. Sol menüden Manage Users linkine tıklayın
+        //3. Sol menüden Manage Users linkine tıklar
         ReusableMethods.clickWithJS(adminDashboard.manageUsers);
         //4. Açılan menü menüde All Users, Active Users, Banned Users, Email Unverified, Sms Unverified
         // liklerine tek tek tıklayıp ilgili sayfalara yönlendirildiğini doğrular; User,Email-Phone,Country,
@@ -34,7 +36,7 @@ public class TC {
         String actualAllUsersText = adminDashboard.manageUsersYazisi.getText();
         String expectedAllUsersText = "Manage Users";
         softAssert.assertEquals(actualAllUsersText, expectedAllUsersText);
-        baslikVeIcerikElementList = adminDashboard.allUsersTable;
+        baslikVeIcerikElementList = adminDashboard.tableElementi;
         baslikVeIcerikList = ReusableMethods.getElementsText(baslikVeIcerikElementList);
         System.out.println("===========================================================");
         System.out.println(baslikVeIcerikList.size());
@@ -44,28 +46,28 @@ public class TC {
         ReusableMethods.clickWithJS(adminDashboard.activeUsers);
         String actualActiveUsersText = adminDashboard.manageActiveUsersYazisi.getText();
         String expectedActiveUsersText = "Active Users";
-        //softAssert.assertEquals(actualActiveUsersText, expectedActiveUsersText);
+        softAssert.assertEquals(actualActiveUsersText, expectedActiveUsersText);
         ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
 
         ReusableMethods.clickWithJS(adminDashboard.bannedUsers);
         String actualBannedUsersText = adminDashboard.bannedUsersYazisi.getText();
         String expectedBannedUsersText = "Banned Users";
-        //softAssert.assertEquals(actualBannedUsersText, expectedBannedUsersText);
+        softAssert.assertEquals(actualBannedUsersText, expectedBannedUsersText);
         ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
 
         ReusableMethods.clickWithJS(adminDashboard.emailUnverified);
         String actualEmailUnverifiedText = adminDashboard.emailUnverifiedUsersYazisi.getText();
         String expectedEmailUnverifiedText = "Email Unverified";
-        //softAssert.assertEquals(actualEmailUnverifiedText, expectedEmailUnverifiedText);
+        softAssert.assertEquals(actualEmailUnverifiedText, expectedEmailUnverifiedText);
         ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
 
         ReusableMethods.clickWithJS(adminDashboard.smsUnverified);
         String actualSmsUnverifiedText = adminDashboard.SMSUnverifiedUsersYazisi.getText();
         String expectedSmsUnverifiedText = "Sms Unverified";
-        //softAssert.assertEquals(actualSmsUnverifiedText, expectedSmsUnverifiedText);
+        softAssert.assertEquals(actualSmsUnverifiedText, expectedSmsUnverifiedText);
         ReusableMethods.wait(2);
         Driver.getDriver().navigate().back();
         ReusableMethods.clickWithJS(adminDashboard.allUsers);
@@ -87,7 +89,7 @@ public class TC {
         String profileSettingsYazisi = userDashboard.profileText.getText();
         softAssert.assertTrue(profileSettingsYazisi.contains("Profile"));
         softAssert.assertAll();
-        //12. Sayfayı kapatın
-        Driver.closeDriver();
+        //11. Sayfayı kapatır
+        Driver.quitDriver();
     }
 }

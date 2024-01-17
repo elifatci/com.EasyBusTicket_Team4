@@ -35,7 +35,7 @@ public class TC02_negativeTest {
         page.textBoxUsername.click();
         page.textBoxUsername.sendKeys("1234 5678");
 
-        // 7. Kullanici password textbox'in icine gecerli-gecersiz sifre girer
+            // 7. Kullanici password textbox'in icine gecerli-gecersiz sifre girer
         page.textBoxPassword.sendKeys("Deneme01.");
 
         // 8. Kullanici LogIn buttonuna tiklar

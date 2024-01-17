@@ -26,6 +26,8 @@ public class US09_TC01 {
         visitorHomepage.ButtonSignUp.click();
         //5. Sign up sayfaya eriştiğini  SignUp Your Account yazısı ve kayıt formu penceresi ile doğrular.
         SoftAssert softAssert=new SoftAssert();
+        //softAssert.assertTrue(visitorHomepage.signUpYourAccountAndRegisterForm
+          //      .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
                 .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         //6.First Name text box'ına  tıklar ve geçerli bir isim girer.
@@ -37,8 +39,9 @@ public class US09_TC01 {
         //12.ConfirmPassword  butonuna tıklar ve geçerli bir password girer.
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
-        //String password=faker.internet()
-         //                   .password(7,9,true,true,true);
+
+        String password=faker.internet()
+               .password(7,9,true,true,true);
         String username= faker.name().lastName()+"of123";
         ReusableMethods.wait(2);
 
@@ -53,17 +56,13 @@ public class US09_TC01 {
                 .sendKeys(Keys.TAB)
                 .sendKeys((username))
                 .sendKeys(Keys.TAB)
-                .sendKeys("deniz.10@tutanota.com")
+                .sendKeys("lefven.1@gmail.com")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Testci1.")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Testci1.")
                 .sendKeys().perform();
-        ReusableMethods.wait(2);
-        //13.Country butonuna  tıklar ve dropdown menuden  bir ülke seçer
-       // Select selectCountry =new Select(visitorHomepage.PlaceholderCountry);
-        //selectCountry.selectByValue("Canada");
-        ReusableMethods.wait(2);
+        ReusableMethods.wait(4);
         //14.Accepting all check box'ını tıklar.
         JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
         ReusableMethods.clickWithJS(visitorHomepage.CheckListAgree);
@@ -75,7 +74,7 @@ public class US09_TC01 {
         String expectedUrl="https://qa.easybusticket.com/user/dashboard";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         ReusableMethods.wait(2);
-        softAssert.assertEquals(actualUrl,expectedUrl,"actual ve expected url'ler aynı değildir");
+        softAssert.assertEquals(actualUrl,expectedUrl,"Actual ve expected url'ler aynı değildir!");
         softAssert.assertAll();
         ReusableMethods.wait(2);
         //17.Browser'ı kapatır.

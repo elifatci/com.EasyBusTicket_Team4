@@ -145,14 +145,14 @@ public class VisitorHomepage {
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[1]")public WebElement usefulLinksFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[2]")public WebElement policiesFooter;
     @FindBy(xpath = "(//h4[@class=\"widget-title\"])[3]")public WebElement contactInfoFooter;
-    @FindBy(xpath = "(//a)[24]")public WebElement aboutFooter;
+    @FindBy(xpath = "/html/body/section[3]/div/div/div/div[2]/div/ul/li[1]/a")public WebElement aboutFooter;
     @FindBy(xpath = "(//a)[25]")public WebElement faqsFooter;
     @FindBy(xpath = "(//a)[26]")public WebElement blogFooter;
-    @FindBy(xpath = "(//a)[27]")public WebElement contactFooter;
+    @FindBy(xpath = "(//a)[27]")public WebElement phoneNumberFooter;
     @FindBy(xpath = "(//a)[28]")public WebElement privacyPolicyFooter;
     @FindBy(xpath = "(//a)[29]")public WebElement termsAndConditionsFooter;
     @FindBy(xpath = "(//a)[30]")public WebElement ticketPoliciesFooter;
-    @FindBy(xpath = "(//a)[31]")public WebElement phoneNumberFooter;
+    @FindBy(xpath = "(//a)[31]")public WebElement phoneNumberFooter1;
     @FindBy(xpath = "(//a)[32]")public WebElement infoEmailFooter;
     @FindBy(xpath = "/html/body/section[6]/div/div/div/div[4]/div/ul/li[1]/text()[2]")public WebElement locationFooter;
 
@@ -210,13 +210,21 @@ public class VisitorHomepage {
     @FindBy(xpath = "(//*[text()='Username'])[2]") public WebElement usernameYazisiResetPage;
     @FindBy(xpath = "//*[@class='form--control ']") public WebElement textBoxUsernameResetPage;
     @FindBy(xpath = "//*[text()='Send Password Code']") public WebElement buttonSendPasswordCodeResetPage;
-    @FindBy(xpath = "//*[text='Password reset email sent successfully']") public WebElement resetEmailYazisiResetPage;
+
 
     //Account Recovery page'deki Try to send again texti
     @FindBy(xpath = "//*[text()='Try to send again']") public WebElement textTryToSendAgainAccountRecoveryPage;
 
+
 // Every journey texti
 @FindBy(xpath = "//*[@class='banner-content']") public WebElement textEvery;
 
+  // Mesaj gönderilince çıkan alert
+    @FindBy (xpath = "/html/body/div[6]") public WebElement messageYourmessagehasbeensent;
 
+  @FindBy (xpath = "/html/body/script[10]/text()") public WebElement messageYourmessagehasbeensent2;
+
+    //Reset Password işleminin başarılı olarak gerçekleştiğini belirten alert yazısı
+    @FindBy(xpath = "//*[@class='iziToast-message slideIn']") public WebElement alertPasswordResetSuccessfullyYazisi;
+    @FindBy(xpath = "//*[@href='tel:+1 (603) 624-1800']") public WebElement telefonNo;
 }
