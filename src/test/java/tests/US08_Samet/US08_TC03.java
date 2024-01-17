@@ -58,9 +58,12 @@ public class US08_TC03 {
         //  Verify that the message has been successfully sent and visible in the admin dashboard
             String actualMessageText= pageUser.messageText.getText();
             softAssert.assertTrue(actualMessageText.contains("This is my message"));
-
+           softAssert.assertAll();
+         // Close the page
+          Driver.getDriver().close();
            softAssert.assertAll();
           // Driver.getDriver().close();
+
 
     }
 }}

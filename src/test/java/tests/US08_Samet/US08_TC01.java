@@ -28,6 +28,7 @@ public class US08_TC01 {
             // Verify that the URL address of the opened page is 'https://qa.easybusticket.com/contact'
             softAssert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://qa.easybusticket.com/contact");
             softAssert.assertAll();
+            // Close the page
             Driver.getDriver().quit();
 
         }

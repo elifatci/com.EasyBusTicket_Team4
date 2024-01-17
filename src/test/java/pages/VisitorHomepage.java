@@ -73,10 +73,14 @@ public class VisitorHomepage {
     @FindBy (xpath = "//div[@class=\"map-wrapper\"]") public WebElement mapGoogle;
 
     //Contact Sayfasındaki maps bö
-    @FindBy(xpath = "//button[@aria-label='Zoom in']") public WebElement IconZoomIn;
-    @FindBy(xpath = "//button[@aria-label='Zoom out']") public WebElement IconZoomOut;
+    @FindBy(xpath = "//button[@aria-label='Büyüt']") public WebElement IconZoomIn;
+    @FindBy(xpath = "//button[@aria-label='Küçült']") public WebElement IconZoomOut;
     @FindBy(xpath = "//a[@aria-label='View larger map']") public WebElement TextViewLargerMap;
     @FindBy(xpath = "//*[@class='gm-inset-map-impl']") public WebElement ImgSatelliteImage;
+    @FindBy(xpath = "(//div[@class=\"col-lg-6\"])[2]") public WebElement addressInMap;
+    @FindBy(xpath = "//button[@aria-label=\"Show street map\"]") public WebElement satellitieImagery;
+    @FindBy(xpath = "iframe") public WebElement iframe;
+
 
     //cookies accept (AnaSayfaya erişildiğinde gelen cookie kabul  allerti)
     @FindBy(className = "cookies-btn")public WebElement ButonCookieAccept;
