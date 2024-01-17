@@ -6,7 +6,7 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class US08_TC02 {
+public class US08_TC002 {
     @Test
     public void visibilityTest() {
         //  Navigate to "https://qa.easybusticket.com/contact" which is the Contact page of the site
@@ -32,8 +32,8 @@ public class US08_TC02 {
             homepage.IconEmailUs.click();
             softAssert.assertNotEquals(expectedUrl,Driver.getDriver().getCurrentUrl());
             softAssert.assertAll();
-             //Close the page
-             Driver.getDriver().quit();
+            //Close the page
+            Driver.getDriver().quit();
 
         }
 

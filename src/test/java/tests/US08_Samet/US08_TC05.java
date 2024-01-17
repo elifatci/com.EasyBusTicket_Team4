@@ -35,6 +35,7 @@ public class US08_TC05 {
             softAssert.assertTrue(homepage.IconZoomOut.isEnabled(),"Haritada - görünmüyor");
             //  Verify that the 'Show satellite imagery' button on the map is functional
             Driver.getDriver().switchTo().parentFrame();
+            //ReusableMethods.clickWithJS(homepage.ImgSatelliteImage);
             homepage.ImgSatelliteImage.click();
             ReusableMethods.wait(1);
             softAssert.assertTrue(homepage.satellitieImagery.isDisplayed(),"Harita görünümü değişmedi");
