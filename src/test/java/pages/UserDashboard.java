@@ -241,6 +241,9 @@ public class UserDashboard {
     //Profile Settings Mobile Number textbox'ı
     @FindBy(id = "phone") public WebElement textBoxProfileMobileNumber;
 
+    //Profile Setting Lastname textbox'ı
+    @FindBy(id = "lastname") public WebElement textBoxProfileLastname;
+
 
 
 
