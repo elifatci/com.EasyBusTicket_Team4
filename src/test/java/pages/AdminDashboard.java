@@ -768,27 +768,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='btn btn--primary'])[4]") public WebElement buttonActiveActiveVehicle;
 
     //Active Vehicle Succesfull Alert Yazisi
-
-  //Update Vehicle Succesfull Alert Yazisi
-  @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertUpdateVehicleSuccesfullYazisi;
-
-  //Disable Vehicle Penceresi yazisi;
-    @FindBy(xpath = "(//*[@class='modal-title'])[4]") public WebElement textDisableVehicleWindowWriting;
-
-   //Disable Vehicle Succesfull Alert Yazisi
-    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertDisableVehicleSuccesfullYazisi;
-
-
-  //Active Vehicle Penceresi Yazisi
-  @FindBy(xpath = "(//*[@*='modal-title'])[3]") public WebElement textActiveVehicleWindowWritting;
-
-  //Active Vehicle Active Buttonu
-    @FindBy(xpath = "(//*[@class='btn btn--primary'])[4]") public WebElement buttonActiveActiveVehicle;
-
-  //Active Vehicle Succesfull Alert Yazisi
-
     @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertActiveVehicleSuccesfullYazisi;
-
 
 
     //Trip Page day box
@@ -825,15 +805,14 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
     @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
-
-    @FindBy(xpath = "//*[@class='la la-desktop']") public WebElement paymentHistoryActionLinkii;
-    @FindBy(xpath = "//*[@class='card-title mb-50 border-bottom pb-2']")public WebElement UserdepositinformationText;
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/input")public WebElement Trxnumber;
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/div/button/i")public WebElement Searchtrxnumber;
-
-
     @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
-    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
+
+
+
+
+
+
+
 
 
 }
