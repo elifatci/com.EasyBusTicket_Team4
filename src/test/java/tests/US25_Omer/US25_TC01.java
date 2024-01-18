@@ -19,7 +19,9 @@ public class US25_TC01 {
         softAssert.assertEquals(actualTitle,expectedTitle,"login sayfası görüntülenemedi");
         // Doğru kullanıcı adı ve parola girilir.
         AdminDashboard adminDashboard=new AdminDashboard();
+        ReusableMethods.clickWithJS(adminDashboard.usernameKutusu);
         adminDashboard.usernameKutusu.sendKeys("admin33");
+        ReusableMethods.clickWithJS(adminDashboard.passwordKutusu);
         adminDashboard.passwordKutusu.sendKeys("123123123");
         //login butonuna tıklanır.
         adminDashboard.loginButonu.click();
@@ -31,10 +33,10 @@ public class US25_TC01 {
         ReusableMethods.clickWithJS(adminDashboard.paymentHistory);
         //Admin dashboard sayfasındaki sol menüde bulunan payment history linki ile pending history,Successful History,
         //rejected payment ve All payment linklerini linklerinin görüldüğü doğrulanır.
-        softAssert.assertTrue(adminDashboard.pendingPayment.isEnabled());
-        softAssert.assertTrue(adminDashboard.successfulPayment.isEnabled());
-        softAssert.assertTrue(adminDashboard.rejectedPayment.isEnabled());
-        softAssert.assertTrue(adminDashboard.allPayment.isEnabled());
+        softAssert.assertTrue(adminDashboard.pendingPayment.isEnabled(),"pending payment görünmüyor");
+        softAssert.assertTrue(adminDashboard.successfulPayment.isEnabled(),"succesfull payment görünmüyor");
+        softAssert.assertTrue(adminDashboard.rejectedPayment.isEnabled(),"reject payment görünmüyor");
+        softAssert.assertTrue(adminDashboard.allPayment.isEnabled(),"tüm ödemeler görünmüyor");
         softAssert.assertAll();
         //driver kapatılır.
         Driver.closeDriver();

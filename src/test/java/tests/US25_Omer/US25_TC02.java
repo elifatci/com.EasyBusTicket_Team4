@@ -31,12 +31,11 @@ public class US25_TC02 {
         // pending payment sayfasında ödeme sayfasında ödeme olduğu doğrulanır ,
         softAssert.assertTrue(adminDashboard.paymentHistoryActionLinki.isDisplayed());
         //ödeme detayları tıklanır.
-        ReusableMethods.clickWithJS(adminDashboard.paymentHistoryActionLinki);
-
-
-
-
-
+        ReusableMethods.clickWithJS(adminDashboard.paymentHistoryActionLinkii);
+        //ödeme detayları içerisinde User Deposit Information yazısı olduğu doğrulanır.
+        softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet depozit bilgileri yazısına ulaşılamadı");
+        //tarayıcı kapatılır.
+        Driver.closeDriver();
         softAssert.assertAll();
 
 
