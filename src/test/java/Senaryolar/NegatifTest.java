@@ -25,7 +25,7 @@ public class NegatifTest extends TestBaseRapor {
         //Username textbox'in icine gecerli sifre girilir
         visitorHomepage.textBoxPassword.sendKeys("123Team");
         extentTest.info("Kullanici password textboxina gecerli password girer");
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         //Login butonuna click yapilir
         visitorHomepage.buttonLogin.click();
         extentTest.info("Kullanici login butonuna tiklar");
@@ -35,6 +35,7 @@ public class NegatifTest extends TestBaseRapor {
         String actualUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualUrl,expectedUrl,"Login olamadigi dogrulanamadi");
         extentTest.pass("Login olamadigi dogrulanir");
+        ReusableMethods.waitFor(3);
         //Username textbox'in içine gecersiz kullanici adi girilir
         visitorHomepage.textBoxUsername.sendKeys("team4");
         extentTest.info("Kullanici username textboxina gecersiz username girer");
@@ -42,7 +43,7 @@ public class NegatifTest extends TestBaseRapor {
         //Password  textbox'in içine gecersiz sifre girilir
         visitorHomepage.textBoxPassword.sendKeys("4team");
         extentTest.info("Kullanici password textboxina gecersiz password girer");
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         //Login butonuna click yapilir
         visitorHomepage.buttonLogin.click();
         extentTest.info("Kullanici login butonuna tiklar");
@@ -52,6 +53,7 @@ public class NegatifTest extends TestBaseRapor {
         actualUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualUrl,expectedUrl,"Login olamadigi dogrulanamadi");
         extentTest.pass("Login olamadigi dogrulanir");
+        ReusableMethods.waitFor(3);
         //Username textbox'in içine gecerli kullanici adi girilir
         visitorHomepage.textBoxUsername.sendKeys("Team_4");
         extentTest.info("Kullanici username textboxina gecerli username girer");
@@ -59,7 +61,7 @@ public class NegatifTest extends TestBaseRapor {
         //Password textbox'in içine gecersiz sifre girilir
         visitorHomepage.textBoxPassword.sendKeys("4team");
         extentTest.info("Kullanici password textboxina gecersiz password girer");
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         //Login butonuna click yapilir
         visitorHomepage.buttonLogin.click();
         extentTest.info("Kullanici login butonuna tiklar");
@@ -69,6 +71,7 @@ public class NegatifTest extends TestBaseRapor {
         actualUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualUrl,expectedUrl,"Login olamadigi dogrulanamadi");
         extentTest.pass("Login olamadigi dogrulanir");
+        ReusableMethods.waitFor(3);
         //browser kapatilir
         Driver.closeDriver();
         extentTest.info("Browser kapatilir");
