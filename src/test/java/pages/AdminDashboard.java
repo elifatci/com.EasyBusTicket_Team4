@@ -595,6 +595,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement addCounterMobileTextBox;
     @FindBy(xpath = "(//*[text()='Close'])[1]") public WebElement addCounterCloseButtonu;
     @FindBy(xpath = "//*[text()='Save']") public WebElement addCounterSaveButtonu;
+    @FindBy(xpath = "/html/body/div[2]") public WebElement addCounterSaveAlert;
 
     //All Counter sayfasında Action Pen İcon'una tıklandığında açılan pencere ve ayrıntıları
     @FindBy(xpath = "(//*[@class='modal-content'])[2]") public WebElement updateCounterPenceresi;
@@ -603,7 +604,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='form-control'])[7]") public WebElement updateCounterLocationTextBox;
     @FindBy(xpath = "(//*[@class='form-control'])[8]") public WebElement updateCounterMobileTextBox;
     @FindBy(xpath = "(//*[@class='btn btn--dark'])[2]") public WebElement updateCounterCloseButtonu;
-    @FindBy(xpath = "(//*[@class='btn btn--primary'])[2]") public WebElement updaCounterUpdateButtonu;
+    @FindBy(xpath = "(//*[@class='btn btn--primary'])[2]") public WebElement updateCounterUpdateButtonu;
 
     //All Counter sayfasında Action Green eyes ve Red eyes İCon'larına Tıklandıgında açılan Alertler
     @FindBy(xpath = "(//*[@class='btn btn--dark'])[3]") public WebElement activeCounterCloseButtonu;
@@ -730,7 +731,11 @@ public class AdminDashboard {
     //Update Fleet type NonAc Buttonu
     @FindBy(xpath = "(//*[@class='toggle-handle btn btn-default'])[2]") public WebElement buttonNonAcUpdateFleetType;
 
+
+    //Fleet Type page Action Slash Eye İconu
+
    //Fleet Type page Action Slash Eye İconu
+
     @FindBy(xpath = "(//*[@*='la la-eye-slash'])[1]") public WebElement iconSlashEyeFleetTypePage;
 
     //Fleet Type taki Disable Fleet Type Penceresi yazisi
@@ -744,6 +749,25 @@ public class AdminDashboard {
 
     //Add Vehicle Succesfull Alert Yazisi
     @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertAddVehicleSuccesfullYazisi;
+
+
+    //Update Vehicle Succesfull Alert Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertUpdateVehicleSuccesfullYazisi;
+
+    //Disable Vehicle Penceresi yazisi;
+    @FindBy(xpath = "(//*[@class='modal-title'])[4]") public WebElement textDisableVehicleWindowWriting;
+
+    //Disable Vehicle Succesfull Alert Yazisi
+    @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertDisableVehicleSuccesfullYazisi;
+
+
+    //Active Vehicle Penceresi Yazisi
+    @FindBy(xpath = "(//*[@*='modal-title'])[3]") public WebElement textActiveVehicleWindowWritting;
+
+    //Active Vehicle Active Buttonu
+    @FindBy(xpath = "(//*[@class='btn btn--primary'])[4]") public WebElement buttonActiveActiveVehicle;
+
+    //Active Vehicle Succesfull Alert Yazisi
 
   //Update Vehicle Succesfull Alert Yazisi
   @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertUpdateVehicleSuccesfullYazisi;
@@ -762,6 +786,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='btn btn--primary'])[4]") public WebElement buttonActiveActiveVehicle;
 
   //Active Vehicle Succesfull Alert Yazisi
+
     @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertActiveVehicleSuccesfullYazisi;
 
 
@@ -801,9 +826,15 @@ public class AdminDashboard {
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
     @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
 
+    @FindBy(xpath = "//*[@class='la la-desktop']") public WebElement paymentHistoryActionLinkii;
+    @FindBy(xpath = "//*[@class='card-title mb-50 border-bottom pb-2']")public WebElement UserdepositinformationText;
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/input")public WebElement Trxnumber;
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/div/button/i")public WebElement Searchtrxnumber;
+
+    @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
 
 
-
-    //
 
 }
+

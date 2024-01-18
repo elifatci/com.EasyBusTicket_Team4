@@ -1,6 +1,8 @@
 package tests.US14_Omer;
 
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.UserDashboard;
@@ -38,9 +40,11 @@ public class US14_TC01 {
         softAssert.assertTrue(userDashboard.windowTotalPendingTicket.isDisplayed(),"windowTotalPendingTicket göntülenemedi");
         softAssert.assertTrue(userDashboard.windowTotalRejectedTicket.isDisplayed(),"TotalRejectedTicket göntülenemedi");
         //8-Alınan biletler listesinde action butonu tıklanır
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickWithJS(userDashboard.buttonFirstAction);
+        ReusableMethods.waitFor(3);
         //9.bilet yazıdrma sayfası çıktığı TicketBookingHistory yazısı ile doğrulanır.
-        softAssert.assertTrue(userDashboard.textTicketBookingHistory.isDisplayed());
+        softAssert.assertTrue(userDashboard.textTicketBookingHistory.isDisplayed(),"(TicketBookingHistory)bilet ayrıntı sayfasına ulaşılamadı");
         //10.bilet yazdırma sayfası kapatılır.
         ReusableMethods.waitFor(3);
         ReusableMethods.clickWithJS(userDashboard.buttonClose);
