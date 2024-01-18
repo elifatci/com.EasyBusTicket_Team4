@@ -45,7 +45,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jan 15, 2024 08:32:09 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Jan 18, 2024 08:37:30 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -126,17 +126,17 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Hata sonuc</span>
-						<span class='test-time'>Jan 15, 2024 08:32:15 PM</span>
+						<span class='test-name'>counterStatusTest</span>
+						<span class='test-time'>Jan 18, 2024 08:37:30 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 15, 2024 08:32:15 PM</span>
-	<span class='label end-time'>Jan 15, 2024 08:32:34 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+206ms</span>
+	<span class='label start-time'>Jan 18, 2024 08:37:30 PM</span>
+	<span class='label end-time'>Jan 18, 2024 08:37:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+312ms</span>
 </div>
-<div class='test-desc'>Hatalarin tamami </div>
+<div class='test-desc'>Sayaç sayfasında yeni bir Sayaç eklenmeli, eklenen sayacın bilgileri görüntülenip düzenlenmeli </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
 		<thead>
@@ -147,72 +147,79 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>8:32:22 PM</td>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:37:37 PM</td>
 				<td class='step-details'>
-						uygun bilet goruntulenemedi
+						Go the https://qa.easybusticket.com/admin page
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:37:39 PM</td>
+				<td class='step-details'>
+						Login as a admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:37:41 PM</td>
+				<td class='step-details'>
+						Click the Counter link
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:37:41 PM</td>
+				<td class='step-details'>
+						Click the Add New button
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>8:37:42 PM</td>
+				<td class='step-details'>
+						Enter appropriate data into all fields
 					
 				</td>
 			</tr>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>8:32:22 PM</td>
+				<td class='timestamp'>8:37:43 PM</td>
 				<td class='step-details'>
-						gidis varis yerleri goruntulenemedi
+						Click the Save button and verify that the new counter has been added
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>8:37:44 PM</td>
+				<td class='step-details'>
+						Verify that the added counter is added to the list
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>8:32:34 PM</td>
+				<td class='timestamp'>8:37:44 PM</td>
 				<td class='step-details'>
-						test03
+						counterStatusTest
 					
 				</td>
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>8:32:34 PM</td>
+				<td class='timestamp'>8:37:44 PM</td>
 				<td class='step-details'>
-						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@data-name='Stripe Hosted']"}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [abfad1eb99116304a2fcefdb1136a57f, findElement {using=xpath, value=//*[@data-name='Stripe Hosted']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Elif\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:6827}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:6827/devtool..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: abfad1eb99116304a2fcefdb1136a57f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy12.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:466)
-	at utilities.ReusableMethods.clickWithJS(ReusableMethods.java:341)
-	at tests.US13_Elif.US13_TC03.test03(US13_TC03.java:66)
+						<textarea disabled class="code-block">java.lang.AssertionError: The following asserts failed:
+	Eklenen counter listede yok! expected [false] but found [true]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at tests.US30_Samet.US30_TC02.counterStatusTest(US30_TC02.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -238,7 +245,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
 	at org.testng.TestNG.runSuites(TestNG.java:1114)
 	at org.testng.TestNG.run(TestNG.java:1082)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 </textarea>
 					
@@ -248,7 +255,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 	</table>
 </div>
 						<ul class='screenshots'>
-							<li><img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\Elif\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/test0320240115083233.png' src='C:\Users\Elif\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/test0320240115083233.png' data-src='C:\Users\Elif\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/test0320240115083233.png'></li>
+							<li><img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Users\ADMİN\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/counterStatusTest20240118083744.png' src='C:\Users\ADMİN\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/counterStatusTest20240118083744.png' data-src='C:\Users\ADMİN\IdeaProjects\com.EasyBusTicket_Team4/raporlar/Screenshots/counterStatusTest20240118083744.png'></li>
 						</ul>
 					</div>
 				</li>
@@ -292,7 +299,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 			<ul id='exception-collection' class='exception-collection'>
 				<li class='exception displayed active'>
 					<div class='exception-heading'>
-						<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+						<span class='exception-name'>java.lang.AssertionError</span>
 						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
 					</div>
 					<div class='exception-content hide'>
@@ -307,47 +314,14 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jan 15, 2024 08:32:15 PM</td>
-										<td class='linked' test-id='1'>Hata sonuc</td>
+										<td>Jan 18, 2024 08:37:30 PM</td>
+										<td class='linked' test-id='1'>counterStatusTest</td>
 										<td>
-											<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@data-name='Stripe Hosted']"}
-  (Session info: chrome=120.0.6099.217)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.16.1', revision: '9b4c83354e'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.20'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [abfad1eb99116304a2fcefdb1136a57f, findElement {using=xpath, value=//*[@data-name='Stripe Hosted']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.217, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\Elif\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:6827}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:6827/devtool..., se:cdpVersion: 120.0.6099.217, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: abfad1eb99116304a2fcefdb1136a57f
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:354)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy12.getWrappedElement(Unknown Source)
-	at org.openqa.selenium.remote.internal.WebElementToJsonConverter.apply(WebElementToJsonConverter.java:51)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:466)
-	at utilities.ReusableMethods.clickWithJS(ReusableMethods.java:341)
-	at tests.US13_Elif.US13_TC03.test03(US13_TC03.java:66)
+											<textarea disabled class="code-block">java.lang.AssertionError: The following asserts failed:
+	Eklenen counter listede yok! expected [false] but found [true]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at tests.US30_Samet.US30_TC02.counterStatusTest(US30_TC02.java:57)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -373,7 +347,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
 	at org.testng.TestNG.runSuites(TestNG.java:1114)
 	at org.testng.TestNG.run(TestNG.java:1082)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 </textarea>
 										</td>
@@ -412,19 +386,19 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 15, 2024 08:32:09 PM</div>
+					<div class='panel-lead'>Jan 18, 2024 08:37:30 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 15, 2024 08:32:34 PM</div>
+			 		<div class='panel-lead'>Jan 18, 2024 08:37:45 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 25s+291ms</div>
+					<div class='panel-lead'>0h 0m 15s+360ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -446,7 +420,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 							</tr>
 							<tr>
 								<td>Automation Engineer</td>
-								<td>Elif</td>
+								<td>Team4</td>
 							</tr>
 					</table>
 				</div>
@@ -491,7 +465,7 @@ Session ID: abfad1eb99116304a2fcefdb1136a57f
 		</script>
 		<script>
 			var timeline = {
-			        "Hata sonuc":19.206
+			        "counterStatusTest":14.312
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
