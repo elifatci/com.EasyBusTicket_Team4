@@ -22,7 +22,7 @@ public abstract class TestBaseRapor {
     public void setUpTest() {
         extentReports = new ExtentReports();
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String filePath = System.getProperty("user.dir") + "/test-output/Rapor"+date+".html";
+        String filePath = System.getProperty("user.dir") + "/test-output/US_26"+date+".html";
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
 

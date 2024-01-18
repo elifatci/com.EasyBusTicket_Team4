@@ -800,6 +800,7 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
     @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
     @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
 
