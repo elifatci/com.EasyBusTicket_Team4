@@ -1,4 +1,4 @@
-package Senaryolar;
+package scenarios;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
