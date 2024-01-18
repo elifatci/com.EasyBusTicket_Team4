@@ -5,6 +5,7 @@ import org.testng.asserts.SoftAssert;
 import pages.AdminDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class US34_TC01 extends TestBaseRapor {
@@ -34,13 +35,14 @@ public class US34_TC01 extends TestBaseRapor {
         extentTest.info("Kullanici login butonuna tiklar");
         //Verify dashboard page is visible
         actualTitle=Driver.getDriver().getTitle();
-        softAssert.assertTrue(actualTitle.contains("dashboard"),"dashboard page is not visible");
+        softAssert.assertTrue(actualTitle.contains("Dashboard"),"dashboard page is not visible");
         extentTest.pass("Kullanici dashboard sayfasinin gorunur oldugunu dogrular");
         //Click on the username text
         adminDashboard.adminUserLinki.click();
         extentTest.info("Kullanici username textine tiklar");
+        ReusableMethods.waitFor(2);
         //Verify password button is visible
-        softAssert.assertTrue(adminDashboard.passwordButton.isDisplayed());
+        softAssert.assertTrue(adminDashboard.passwordButton.isDisplayed(),"password button is not visible");
         extentTest.pass("Kullanici password kutusunun gorunur oldugunu dogrular");
         //Click on the password button
         adminDashboard.passwordButton.click();
