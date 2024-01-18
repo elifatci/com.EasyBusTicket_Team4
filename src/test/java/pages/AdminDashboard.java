@@ -595,6 +595,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='form-control'])[4]") public WebElement addCounterMobileTextBox;
     @FindBy(xpath = "(//*[text()='Close'])[1]") public WebElement addCounterCloseButtonu;
     @FindBy(xpath = "//*[text()='Save']") public WebElement addCounterSaveButtonu;
+    @FindBy(xpath = "/html/body/div[2]") public WebElement addCounterSaveAlert;
 
     //All Counter sayfasında Action Pen İcon'una tıklandığında açılan pencere ve ayrıntıları
     @FindBy(xpath = "(//*[@class='modal-content'])[2]") public WebElement updateCounterPenceresi;
@@ -603,7 +604,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='form-control'])[7]") public WebElement updateCounterLocationTextBox;
     @FindBy(xpath = "(//*[@class='form-control'])[8]") public WebElement updateCounterMobileTextBox;
     @FindBy(xpath = "(//*[@class='btn btn--dark'])[2]") public WebElement updateCounterCloseButtonu;
-    @FindBy(xpath = "(//*[@class='btn btn--primary'])[2]") public WebElement updaCounterUpdateButtonu;
+    @FindBy(xpath = "(//*[@class='btn btn--primary'])[2]") public WebElement updateCounterUpdateButtonu;
 
     //All Counter sayfasında Action Green eyes ve Red eyes İCon'larına Tıklandıgında açılan Alertler
     @FindBy(xpath = "(//*[@class='btn btn--dark'])[3]") public WebElement activeCounterCloseButtonu;
@@ -802,6 +803,8 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='col-md-9'][1]") public WebElement closedSenderInfo;
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
+    @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
+
 
 
 
