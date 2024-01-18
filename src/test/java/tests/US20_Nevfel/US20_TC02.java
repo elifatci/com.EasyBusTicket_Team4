@@ -9,77 +9,94 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
 import java.time.Duration;
 
-public class US20_TC02 {
+public class US20_TC02 extends TestBaseRapor {
     @Test
     public void test02(){
         //1.Browser açar
         //2."https://qa.easybusticket.com/" anasayfasına gider
+        extentTest=extentReports.createTest("Smoke-E2E Test","Login sayfasında Şifremi unuttum linki ile\n şifre değiştirme için gerekli şifre kodunu alabilmeli");
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
+        extentTest.info("Anasayfaya gidilir.");
 
         //3- Anasayfa görüntülendiğinde çerez izni uyarısını kabul eder.
         VisitorHomepage visitorHomepage=new VisitorHomepage();
         visitorHomepage.ButonCookieAccept.click();
+        extentTest.info("Anasayfa'da cerez izni uyarısını kabul eder.");
 
-        //3.Anasayfadan sign in buton linkine tıklar.
+        //4.Anasayfadan sign in buton linkine tıklar.
         visitorHomepage.ButtonSignIn.click();
+        extentTest.info("Sign in buton linkine tıklar.");
 
-        //4.Login sayfasına geldiğini doğrular.
+        //5.Login sayfasına geldiğini doğrular.
         SoftAssert softAssert=new SoftAssert();
         softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
                                              .isDisplayed(),"Signup your account and Register form yazısı görülmedi!");
+        extentTest.pass("Login sayfasına geldiğini doğrular.");
 
-        //5.Forgot Password linkine tıklar.
+        //6.Forgot Password linkine tıklar.
         visitorHomepage.TextForgetPassword.click();
+        extentTest.info("Forgot Password linkine tıklar.");
         ReusableMethods.wait(2);
 
-        //6.Forgot Password linkine tıkladığında Reset Password sayfasına ulaştığını  doğrular.
+        //7.Forgot Password linkine tıkladığında Reset Password sayfasına ulaştığını  doğrular.
         String expectedResetUrl="https://qa.easybusticket.com/password/reset";
         String actualResetUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualResetUrl,expectedResetUrl,"Url'ler aynı değildir!");
+        extentTest.pass("Forgot Password linkine tıkladığında Reset Password sayfasına ulaştığını  doğrular.");
 
-        //7.Select One select butonuna  tıklanır ve Username'i  seçer.
+        //8.Select One select butonuna  tıklanır ve Username'i  seçer.
         Select selectUsername=new Select(visitorHomepage.dropDownSelectOneResetPage);
         selectUsername.selectByValue("username");
+        extentTest.info("Select One select butonuna  tıklanır ve Username'i  seçer.");
         ReusableMethods.wait(2);
 
-        //8.Username seçtiğinde  alttaki textbox da username  yazısının görüntülendiğini doğrular.
+        //9.Username seçtiğinde  alttaki textbox da username  yazısının görüntülendiğini doğrular.
         softAssert.assertTrue(visitorHomepage.usernameYazisiResetPage
                   .isDisplayed(),"Username  yazısı görüntülenemedi!");
+        extentTest.pass("Username seçtiğinde  alttaki textbox da username  yazısının görüntülendiğini doğrular.");
 
-        //9.Username  textbox'ına kayıtlı username'i  girer.
+        //10.Username  textbox'ına kayıtlı username'i  girer.
         visitorHomepage.textBoxUsernameResetPage.sendKeys("nevfel");
-
+        extentTest.info("Username  textbox'ına kayıtlı username'i  girer.");
         ReusableMethods.wait(2);
-        //10.Send Password  Code butonuna  tıklar.
-        visitorHomepage.buttonSendPasswordCodeResetPage.click();
 
-        //11."Password reset email sent successfully" yazısı ile  kodun mail adresine gönderildiğini doğrular.
+        //11.Send Password  Code butonuna  tıklar.
+        visitorHomepage.buttonSendPasswordCodeResetPage.click();
+        extentTest.info("Send Password  Code butonuna  tıklar.");
+
+        //12."Password reset email sent successfully" yazısı ile  kodun mail adresine gönderildiğini doğrular.
       ReusableMethods.waitForVisibility(visitorHomepage.alertPasswordResetSuccessfullyYazisi,4);
         softAssert.assertTrue(visitorHomepage.alertPasswordResetSuccessfullyYazisi
                   .isDisplayed(),"Password reset email sent successfully yazısı görüntülenemedi");
+        extentTest.pass("Password reset email sent successfully\n yazısı ile  kodun mail adresine gönderildiğini doğrular.");
         ReusableMethods.wait(2);
 
-        //12.Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntüler.
+        //13.Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntülediğini doğrular.
         String expectedTitle="Easy Bus Ticket - Account Recovery";
         String actualTitle=Driver.getDriver().getTitle();
         softAssert.assertEquals(actualTitle,expectedTitle,"Sayfa başlıkları aynı değildir!");
+        extentTest.pass(".Şifre gönderimi gerçekleştikten sonra Account Recovery sayfasını görüntülediğini doğrular.");
 
-        //13.Account Recovery sayfasında Try to send again linkine tıklar.
+        //14.Account Recovery sayfasında Try to send again linkine tıklar.
         visitorHomepage.textTryToSendAgainAccountRecoveryPage.click();
         ReusableMethods.wait(2);
+        extentTest.info("Account Recovery sayfasında Try to send again linkine tıklar.");
 
         //15. Reset Password sayfasına gelindiği doğrulanır
         String ExpectedResetUrl="https://qa.easybusticket.com/password/reset";
         String ActualResetUrl=Driver.getDriver().getCurrentUrl();
         softAssert.assertEquals(actualResetUrl,expectedResetUrl,"Url'ler aynı değildir!");
+        extentTest.pass("Reset Password sayfasına gelindiği doğrular.");
         ReusableMethods.wait(2);
 
         softAssert.assertAll();
 
         //16.Browser'ı kapatır.
         Driver.closeDriver();
+        extentTest.info("Browser'ı kapatır.");
     }
 }

@@ -11,25 +11,33 @@ import pages.VisitorHomepage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class US09_TC01 {
+public class US09_TC01 extends TestBaseRapor {
 
     @Test
     public void test01(){
         //1.Browserı açar
         //2.Açılan browser'a "https://qa.easybusticket.com" adresini yazar .
+        extentTest=extentReports.createTest("Smoke Test"," Ziyaretci olrak Sign up sayfasında kayıt mümkün olmalı ve \n sayfanın işlevleri düzgün çalışmalı");
         Driver.getDriver().get(ConfigReader.getProperty("easyBusUrl"));
-        //4- Anasayfa görüntülendiğinde çerez izni uyarısını kabul eder.
+        extentTest.info("Kullanici anasayfaya gider.");
+
+        //3- Anasayfa görüntülendiğinde çerez izni uyarısını kabul eder.
         VisitorHomepage visitorHomepage=new VisitorHomepage();
         visitorHomepage.ButonCookieAccept.click();
-        //5.Anasayfadan signup buton linkine tıklar.
+        extentTest.info("Anasayfa'da cerez izni uyarısını kabul eder. ");
+
+        //4.Anasayfadan signup buton linkine tıklar.
         visitorHomepage.ButtonSignUp.click();
+        extentTest.info("Signup buton linkine tıklar.");
+
         //5. Sign up sayfaya eriştiğini  SignUp Your Account yazısı ve kayıt formu penceresi ile doğrular.
         SoftAssert softAssert=new SoftAssert();
-        //softAssert.assertTrue(visitorHomepage.signUpYourAccountAndRegisterForm
-          //      .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
         softAssert.assertTrue(visitorHomepage.SignUpYourAccountAndRegisterForm
                 .isEnabled(),"SignUp Your Account yazısı ve kayıt formuna erişilemedi!");
+        extentTest.pass("Sign up sayfaya eriştiğini  SignUp Your Account yazısı ve\n kayıt formu penceresi ile doğrular.");
+
         //6.First Name text box'ına  tıklar ve geçerli bir isim girer.
         //7.Last Name text box'ına tıklar ve geçerli bir soyisim girer.
         //8.Mobile butonuna tıklar  ve geçerli bir numara girer.
@@ -40,8 +48,6 @@ public class US09_TC01 {
         Actions actions=new Actions(Driver.getDriver());
         Faker faker=new Faker();
 
-        String password=faker.internet()
-               .password(7,9,true,true,true);
         String username= faker.name().lastName()+"of123";
         ReusableMethods.wait(2);
 
@@ -56,29 +62,38 @@ public class US09_TC01 {
                 .sendKeys(Keys.TAB)
                 .sendKeys((username))
                 .sendKeys(Keys.TAB)
-                .sendKeys("lefven.1@gmail.com")
+                .sendKeys("lefvn.1@gmail.com")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Testci1.")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Testci1.")
                 .sendKeys().perform();
+        extentTest.info(" Kayıt Form penceresindeki Textbox'ları doldurur.");
         ReusableMethods.wait(4);
+
         //14.Accepting all check box'ını tıklar.
         JavascriptExecutor jse= (JavascriptExecutor) Driver.getDriver();
         ReusableMethods.clickWithJS(visitorHomepage.CheckListAgree);
         ReusableMethods.wait(2);
+        extentTest.info("Accepting all check box'ını tıklar.");
+
         //15.Signup butonuna tıklar.
-        visitorHomepage.ButtonSignUpSignUpPage.click();
+        ReusableMethods.clickWithJS(visitorHomepage.ButtonSignUpSignUpPage);
+        extentTest.info("Signup butonuna tıklar.");
         ReusableMethods.wait(2);
+
         //16.Üye olup "https://qa.easybusticket.com/user/dashboard"sayfasına gidildiğini  doğrular.
         String expectedUrl="https://qa.easybusticket.com/user/dashboard";
         String actualUrl=Driver.getDriver().getCurrentUrl();
         ReusableMethods.wait(2);
         softAssert.assertEquals(actualUrl,expectedUrl,"Actual ve expected url'ler aynı değildir!");
+        extentTest.pass("Üye olup \"https://qa.easybusticket.com/user/dashboard\"sayfasına gidildiğini  doğrular.");
+
         softAssert.assertAll();
         ReusableMethods.wait(2);
         //17.Browser'ı kapatır.
         Driver.closeDriver();
+        extentTest.info("Browser'ı kapatır.");
 
     }
 

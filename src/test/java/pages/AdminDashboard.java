@@ -681,9 +681,6 @@ public class AdminDashboard {
 
 
     @FindBy(xpath = "//*[@class='page-title']") public WebElement userSearchTitle;
-
-    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
-  
     //Admin DashboardTaki Manage Fleets alt başlıklarının sayfa görünümü
     @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement seatLayoutsPage;
     @FindBy(xpath = "//*[@class='bodywrapper__inner']") public WebElement fleetTypePage;
@@ -804,9 +801,7 @@ public class AdminDashboard {
     @FindBy(xpath = "(//*[@class='text-muted font-weight-bold my-3'])[1]") public WebElement closedTime;
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
     @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
-
-
-
+    @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
 
 
 }
