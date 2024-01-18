@@ -238,6 +238,9 @@ public class UserDashboard {
 
     @FindBy(xpath = ("(//*[@class='ticket-no'])[1]"))public WebElement textticketnoo;
 
+    //Profile Settings Mobile Number textbox'ı
+    @FindBy(id = "phone") public WebElement textBoxProfileMobileNumber;
+
 
 
 
