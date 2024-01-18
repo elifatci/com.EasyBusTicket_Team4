@@ -51,7 +51,7 @@ public class FailedTest extends TestBaseRapor {
         ReusableMethods.clickWithJS(adminDashboard.sendEmailButonu);
         extentTest.pass("Enters the necessary data in the textboxes and clicks the Send Email button");
         // Verifies that the e-mail is sent to all users.
-        softAssert.assertTrue(adminDashboard.emailUnverifiedUsersYazisi.getText().contains("Succesfull"));
+        softAssert.assertTrue(adminDashboard.emailUnverifiedUsersYazisi.getText().contains("Succesfull"),"failed");
         extentTest.pass("Verifies that the e-mail is sent to all users");
         softAssert.assertAll();
         ReusableMethods.wait(1);
