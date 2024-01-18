@@ -1,20 +1,14 @@
 package tests.US25_Omer;
 
 import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
-import pages.AdminDashboard;
-import utilities.ConfigReader;
-import utilities.Driver;
-import utilities.ReusableMethods;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.AdminDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
-
-public class US25_TC03 {
-
+public class US25_TC05 {
     @Test
     public void testUS25_01() {
         //browser açılır
@@ -29,12 +23,12 @@ public class US25_TC03 {
         adminDashboard.loginButonu.click();
         //Payment History butonu tıklanır.
         ReusableMethods.clickWithJS(adminDashboard.paymentHistory);
-        //Succesfullpayment linki tıklanır.
-        ReusableMethods.clickWithJS(adminDashboard.successfulPayment);
-        // https://qa.easybusticket.com/admin/payment/successful sayfasında olduğumuz doğrulanır
-        String expectedurl="https://qa.easybusticket.com/admin/payment/successful";
-        softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),expectedurl,"Succesfullpayment sayfasına yönlendirilmedi");
-        //ödenmiş biletler action butonu tıklanır.
+        //allpayment(tüm ödemeler) tıklanır.
+        ReusableMethods.clickWithJS(adminDashboard.allPayment);
+        //https://qa.easybusticket.com/admin/payment/all sayfasına yönlendirildiği doğrulanır
+        String expectedurl="https://qa.easybusticket.com/admin/payment/all";
+        softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),expectedurl,"all payment sayfasına yönlendirilmedi");
+        ////birinci bilet için allpayment action butonu tıklanır.
         adminDashboard.paymentHistoryActionLinkii.click();
         //UserdepositinformationText görüntülendiği doğrulanır.
         softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet yok");
@@ -51,9 +45,17 @@ public class US25_TC03 {
         //bilet bulunduğu doğrulanır.
         adminDashboard.paymentHistoryActionLinkii.click();
         softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet doğrulanamadı");
+        // doğru bilet numarası görüntülendiği doğrulanır.
+        String actuelbiletno=adminDashboard.TransactionNumber.getText();
+        softAssert.assertEquals(actuelbiletno,bilettrxno);
+
         //driver kapatılır.
         Driver.closeDriver();
         softAssert.assertAll();
+
+
+
+
 
     }
 }
