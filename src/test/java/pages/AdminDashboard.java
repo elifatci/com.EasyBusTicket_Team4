@@ -808,12 +808,5 @@ public class AdminDashboard {
     @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
 
 
-
-
-
-
-
-
-
 }
 
