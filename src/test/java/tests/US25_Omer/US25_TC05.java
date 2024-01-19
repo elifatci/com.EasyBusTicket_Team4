@@ -7,13 +7,16 @@ import pages.AdminDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-public class US25_TC05 {
+public class US25_TC05 extends TestBaseRapor {
     @Test
     public void testUS25_01() {
+        extentTest=extentReports.createTest("Smoke test");
         //browser açılır
         //url "https://qa.easybusticket.com/admin"e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
+        extentTest.info("AdminUrl sayfasina gidilir");
         SoftAssert softAssert = new SoftAssert();
         // Doğru kullanıcı adı ve parola girilir.
         AdminDashboard adminDashboard = new AdminDashboard();
@@ -21,10 +24,13 @@ public class US25_TC05 {
         adminDashboard.passwordKutusu.sendKeys("123123123");
         //login butonuna tıklanır.
         adminDashboard.loginButonu.click();
+        extentTest.info("Gecerli bilgilerle giris yapilarak login butonuna tiklanir");
         //Payment History butonu tıklanır.
         ReusableMethods.clickWithJS(adminDashboard.paymentHistory);
+        extentTest.info("Payment History butonuna tiklanir");
         //allpayment(tüm ödemeler) tıklanır.
         ReusableMethods.clickWithJS(adminDashboard.allPayment);
+        extentTest.info("All payment butonuna tiklanir");
         //https://qa.easybusticket.com/admin/payment/all sayfasına yönlendirildiği doğrulanır
         String expectedurl="https://qa.easybusticket.com/admin/payment/all";
         softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),expectedurl,"all payment sayfasına yönlendirilmedi");
@@ -43,6 +49,7 @@ public class US25_TC05 {
         adminDashboard.Trxnumber.sendKeys(bilettrxno);
         adminDashboard.Searchtrxnumber.click();
         //bilet bulunduğu doğrulanır.
+        extentTest.info("Bilet bulundugu dogrulanir");
         adminDashboard.paymentHistoryActionLinkii.click();
         softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet doğrulanamadı");
         // doğru bilet numarası görüntülendiği doğrulanır.
