@@ -806,6 +806,11 @@ public class AdminDashboard {
     @FindBy(xpath = "(//p)[4]") public WebElement closedMessage;
     @FindBy(xpath = "//table/tbody/tr") public List<WebElement> table;
     @FindBy(xpath = "(//i[@class=\"la la-pen\"])[16]") public WebElement counterUpdatePen;
+    @FindBy(xpath = "//*[@class='la la-desktop']") public WebElement paymentHistoryActionLinkii;
+    @FindBy(xpath = "//*[@class='card-title mb-50 border-bottom pb-2']")public WebElement UserdepositinformationText;
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/input")public WebElement Trxnumber;
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/div/button/i")public WebElement Searchtrxnumber;
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div[1]/div/div/ul/li[2]/span")public WebElement TransactionNumber;
 
 
 }
