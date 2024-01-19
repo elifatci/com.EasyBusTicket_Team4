@@ -91,7 +91,7 @@ public class UserDashboard {
 
     //Dashboard sayfasindaki tablo
     @FindBy(css = ".badge.badge--success") public WebElement textFirstStatus;
-    @FindBy(xpath = "/html/body/section[2]/div/div/div[2]/table/tbody/tr[1]/td[10]/div/a/i") public WebElement buttonFirstAction;
+    @FindBy(xpath = "//tr[1]/td[10]") public WebElement buttonFirstAction;
     @FindBy(className = "modal-title") public WebElement textTicketBookingHistory;
     @FindBy(xpath= "(//*[@type='button'])[2]") public WebElement buttonClose;
 

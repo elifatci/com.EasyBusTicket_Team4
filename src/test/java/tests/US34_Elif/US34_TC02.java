@@ -20,7 +20,7 @@ public class US34_TC02 extends TestBaseRapor {
         AdminDashboard adminDashboard=new AdminDashboard();
         adminDashboard.usernameKutusu.sendKeys("admin31");
         extentTest.info("kullanici gecerli username girer");
-        adminDashboard.passwordKutusu.sendKeys("123123123e");
+        adminDashboard.passwordKutusu.sendKeys("123123123");
         extentTest.info("kullanici gecerli passwrord girer");
         // Click 'login' button
         adminDashboard.loginButonu.click();
@@ -43,13 +43,13 @@ public class US34_TC02 extends TestBaseRapor {
         softAssert.assertTrue(adminDashboard.confirmPasswordText.isDisplayed());
         extentTest.pass("Confirm password yazisinin gorunur oldugunu test eder");
         //Enter current password in password textbox
-        adminDashboard.passwordBox.sendKeys("123123123e");
+        adminDashboard.passwordBox.sendKeys("123123123");
         extentTest.info("password kutusuna guncel şifre girilir");
         //Enter new password in new password textbox
-        adminDashboard.newPasswordBox.sendKeys("123123123");
+        adminDashboard.newPasswordBox.sendKeys("123123123e");
         extentTest.info("New password kutusuna yeni şifre girilir");
         //Enter new password in confirm password textbox
-        adminDashboard.confirmPasswordBox.sendKeys("123123123");
+        adminDashboard.confirmPasswordBox.sendKeys("123123123e");
         extentTest.info("Confirm password kutusuna yeni şifre girilir");
         //Click on the save changes button
         adminDashboard.saveChangesButton.click();
