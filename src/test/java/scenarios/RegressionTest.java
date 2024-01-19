@@ -17,6 +17,7 @@ public class RegressionTest extends TestBaseRapor {
         //1.“ https://qa.easybusticket.com/admin” adresine gider.
         Driver.getDriver().get("https://qa.easybusticket.com/admin");
         extentTest.info("Ana sayfaya gider");
+        ReusableMethods.waitFor(3);
         //2. Admin Login sayfasinda geçerli username ve geçerli password girerek login olur.
         AdminDashboard adminDashboard = new AdminDashboard();
         adminDashboard.usernameKutusu.sendKeys("admin35");
@@ -36,10 +37,10 @@ public class RegressionTest extends TestBaseRapor {
         String expectedAllUsersText = "Manage Users";
         softAssert.assertEquals(actualAllUsersText, expectedAllUsersText);
         extentTest.pass("Manage Users sayfasina gidildigini dogrular");
-        ReusableMethods.waitFor(4);
+        ReusableMethods.waitFor(5);
         // Arama Kutusuna eski bir kullanıcı ismi girer.
         adminDashboard.manageUsersSearchBoxKutusu.sendKeys("MEHMET"+ Keys.ENTER);
-        ReusableMethods.waitFor(4);
+        ReusableMethods.waitFor(5);
         //5.Aramada çıkan kişinin Action butonuna tıklar.
 
         ReusableMethods.clickWithJS(adminDashboard.manageUsersActionIconu);
