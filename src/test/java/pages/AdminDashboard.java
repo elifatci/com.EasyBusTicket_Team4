@@ -810,7 +810,7 @@ public class AdminDashboard {
     @FindBy(xpath = "//*[@class='card-title mb-50 border-bottom pb-2']")public WebElement UserdepositinformationText;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/input")public WebElement Trxnumber;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div[2]/form[1]/div/div/button/i")public WebElement Searchtrxnumber;
-
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[2]/div[1]/div/div/ul/li[2]/span")public WebElement TransactionNumber;
 
 }
 
