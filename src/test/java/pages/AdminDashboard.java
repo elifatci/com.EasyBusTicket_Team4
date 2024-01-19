@@ -770,7 +770,6 @@ public class AdminDashboard {
     //Active Vehicle Succesfull Alert Yazisi
     @FindBy(xpath = "//*[@class='iziToast-wrapper iziToast-wrapper-topRight']") public WebElement alertActiveVehicleSuccesfullYazisi;
 
-
     //Trip Page day box
     @FindBy(xpath = "//*[@class='select2-selection select2-selection--multiple']") public WebElement dayBox;
     @FindBy(xpath = "(//*[@class='las la-desktop'][1])") public WebElement allRequestsAction;
