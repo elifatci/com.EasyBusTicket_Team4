@@ -77,7 +77,7 @@ public class US13_TC03 extends TestBaseRapor{
         ReusableMethods.waitFor(1);
         extentTest.info("kullanici koltuk sec butonuna tiklar");
         //Click on the available seat
-        ReusableMethods.clickWithJS(userDashboard.koltukA1);
+        ReusableMethods.clickWithJS(userDashboard.koltukB3);
         ReusableMethods.waitFor(1);
         extentTest.info("kullanici koltuk secer");
         //Verify that the selected departure and arrival points are visible
@@ -130,7 +130,7 @@ public class US13_TC03 extends TestBaseRapor{
         softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("ticket"), "the purchased ticket is not visible on the page");
         extentTest.pass("kullanici sayfada aldigi biletin gorunur oldugunu dogrular");
         //Click on the print ticket icon
-        userDashboard.buttonFirstAction.click();
+        ReusableMethods.clickWithJS(userDashboard.buttonFirstAction);
         ReusableMethods.waitFor(1);
         extentTest.info("kullanici bilet yazdirma butonuna tiklar");
         //Click on the 'dowload ticket' button

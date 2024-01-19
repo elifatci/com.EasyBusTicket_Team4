@@ -20,16 +20,16 @@ public class US23_TC01 extends TestBaseRapor {
     // 1. Open the browser.
     // 2.Navigate to url "https://qa.easybusticket.com/admin"
     Driver.getDriver().get("https://qa.easybusticket.com/admin");
-    extentTest.info("Navigate to url \"https://qa.easybusticket.com/admin\"");
+    extentTest.info("Navigate to url \"https://qa.easybusticket.com/admni\"");
     // 3.Logs in with valid username and valid password.
     AdminDashboard adminDashboard = new AdminDashboard();
-    extentTest.info("Logs in with valid username and valid password..");
     adminDashboard.usernameKutusu.sendKeys("admin38");
     adminDashboard.passwordKutusu.sendKeys("123123123");
     adminDashboard.loginButonu.click();
+    extentTest.info("Logs in with valid username and valid password..");
     // 4.Click on Manage Users link in the left menu.
-    extentTest.info("Click on Manage Users link in the left menu.");
     adminDashboard.manageUsers.click();
+    extentTest.info("Click on Manage Users link in the left menu.");
     // 5.Displays all users, active users, banned users, email unverified, sms unverified.
     List<WebElement> baslikVeIcerikElementList = adminDashboard.table;
     List<String> baslikVeIcerikList = ReusableMethods.getElementsText(baslikVeIcerikElementList);
@@ -62,6 +62,7 @@ public class US23_TC01 extends TestBaseRapor {
     extentTest.pass("Verifies that the textbox is available.");
     // 8.Search textboxes are searched by entering email address and username.
     adminDashboard.usernameOrEmailSearchKutusu.sendKeys("solomon"+ Keys.ENTER);
+    extentTest.pass("Search textboxes are searched by entering email address and username");
     // 9.Verifies that the searched person is reached.
     softAssert.assertTrue(adminDashboard.userSearchTitle.isEnabled());
     extentTest.pass("Verifies that you can search by username and view the person in the search result.");
@@ -72,14 +73,14 @@ public class US23_TC01 extends TestBaseRapor {
     softAssert.assertTrue(adminDashboard.sendEmailToAllUsersYazisi.isDisplayed());
     extentTest.pass("Verifies that you have reached the page.");
     // 12.Verifies that the Subject and Message textboxes are available.
-    extentTest.pass("Verifies that the Subject and Message textboxes are available.");
     softAssert.assertTrue(adminDashboard.subjectKutusu.isEnabled());
     softAssert.assertTrue(adminDashboard.messageKutusu.isEnabled());
+    extentTest.pass("Verifies that the Subject and Message textboxes are available.");
     // 13.Enters the necessary data in the textboxes and clicks the Send Email button.
-    extentTest.pass("Enters the necessary data in the textboxes and clicks the Send Email button.");
     adminDashboard.subjectKutusu.sendKeys("deneme");
     adminDashboard.messageKutusu.sendKeys("iptal");
     adminDashboard.sendEmailButonu.click();
+    extentTest.pass("Enters the necessary data in the textboxes and clicks the Send Email button.");
     // 14.Verifies that the e-mail is sent to all users.
     extentTest.pass("Verifies that the e-mail is sent to all users.");
     softAssert.assertTrue(adminDashboard.emailUnverifiedUsersYazisi.getText().contains("succesfull"),"BURADA EMAİL GÖNDERİLEMİYOR.");

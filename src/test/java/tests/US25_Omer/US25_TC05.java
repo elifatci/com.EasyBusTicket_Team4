@@ -1,21 +1,18 @@
 package tests.US25_Omer;
 
 import org.openqa.selenium.interactions.Actions;
-import org.testng.asserts.SoftAssert;
-import pages.AdminDashboard;
-import utilities.*;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.AdminDashboard;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
-
-public class US25_TC03 extends TestBaseRapor {
-
+public class US25_TC05 extends TestBaseRapor {
     @Test
     public void testUS25_01() {
-        extentTest=extentReports.createTest("Smoke test","Sıkca sorulan sorular sayfasına erişilmeli");
+        extentTest=extentReports.createTest("Smoke test");
         //browser açılır
         //url "https://qa.easybusticket.com/admin"e gidilir.
         Driver.getDriver().get(ConfigReader.getProperty("adminUrl"));
@@ -31,23 +28,18 @@ public class US25_TC03 extends TestBaseRapor {
         //Payment History butonu tıklanır.
         ReusableMethods.clickWithJS(adminDashboard.paymentHistory);
         extentTest.info("Payment History butonuna tiklanir");
-        //Succesfullpayment linki tıklanır.
-        ReusableMethods.clickWithJS(adminDashboard.successfulPayment);
-        extentTest.info("Succesfull Payment linki tiklanir");
-        // https://qa.easybusticket.com/admin/payment/successful sayfasında olduğumuz doğrulanır
-        String expectedurl="https://qa.easybusticket.com/admin/payment/successful";
-        softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),expectedurl,"Succesfullpayment sayfasına yönlendirilmedi");
-        extentTest.pass("Sayfaya erisildigi dogrulanir");
-        //ödenmiş biletler action butonu tıklanır.
+        //allpayment(tüm ödemeler) tıklanır.
+        ReusableMethods.clickWithJS(adminDashboard.allPayment);
+        extentTest.info("All payment butonuna tiklanir");
+        //https://qa.easybusticket.com/admin/payment/all sayfasına yönlendirildiği doğrulanır
+        String expectedurl="https://qa.easybusticket.com/admin/payment/all";
+        softAssert.assertEquals(Driver.getDriver().getCurrentUrl(),expectedurl,"all payment sayfasına yönlendirilmedi");
+        ////birinci bilet için allpayment action butonu tıklanır.
         adminDashboard.paymentHistoryActionLinkii.click();
-        extentTest.info("Action butonuna tiklanir");
         //UserdepositinformationText görüntülendiği doğrulanır.
-        extentTest.pass("Information textinin gorunur oldugu dogrulanir");
         softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet yok");
-
         //sayfada geri dönülür.
         Driver.getDriver().navigate().back();
-        extentTest.info("Sayfaya geri donulur");
         //bilet trx no ile bilet araması yapılır.
         String bilettrxno="1MHE29ESB3TG";
         ReusableMethods.clickWithJS(adminDashboard.Trxnumber);
@@ -57,11 +49,20 @@ public class US25_TC03 extends TestBaseRapor {
         adminDashboard.Trxnumber.sendKeys(bilettrxno);
         adminDashboard.Searchtrxnumber.click();
         //bilet bulunduğu doğrulanır.
+        extentTest.info("Bilet bulundugu dogrulanir");
         adminDashboard.paymentHistoryActionLinkii.click();
         softAssert.assertTrue(adminDashboard.UserdepositinformationText.isDisplayed(),"bilet doğrulanamadı");
+        // doğru bilet numarası görüntülendiği doğrulanır.
+        String actuelbiletno=adminDashboard.TransactionNumber.getText();
+        softAssert.assertEquals(actuelbiletno,bilettrxno);
+
         //driver kapatılır.
         Driver.closeDriver();
         softAssert.assertAll();
+
+
+
+
 
     }
 }
